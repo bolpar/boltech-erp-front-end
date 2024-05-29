@@ -18,7 +18,7 @@ import { Profile } from './profile'
 
 export const SideBar = () => {
   return (
-    <nav className="fixed flex h-screen flex-col justify-between border-r px-5 py-8 dark:border-borderDarkMode">
+    <nav className="fixed flex h-screen flex-col justify-between border-r bg-green-50 px-5 py-8 dark:border-borderDarkMode dark:bg-darkModeContrast/30">
       <div>
         <Logo />
 
