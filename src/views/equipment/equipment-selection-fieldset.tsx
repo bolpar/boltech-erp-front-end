@@ -11,10 +11,20 @@ export const EquipmentSelectionFieldset = () => {
         SELEÇÃO DE EQUIPAMENTO
       </LegendFieldset>
       <InputText.Root label="Tipo do Aparelho">
-        <InputText.Input placeHolder="Digite o tipo do aparelho..." />
+        <InputText.Input
+          placeHolder="Digite o tipo do aparelho..."
+          value="Aparelho Boltech"
+          disabled
+          readOnly
+        />
       </InputText.Root>
       <InputText.Root label="Quantidade">
-        <InputText.Input placeHolder="Digite a quantidade..." />
+        <InputText.Input
+          placeHolder="Digite a quantidade..."
+          value="1/3"
+          disabled
+          readOnly
+        />
       </InputText.Root>
 
       <div className="col-span-full grid grid-cols-3 gap-4">

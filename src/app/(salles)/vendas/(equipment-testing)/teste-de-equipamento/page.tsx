@@ -1,4 +1,4 @@
-import { InputText } from '@/components/UI/input-text'
+import * as InputText from '@/components/UI/input-text'
 import * as Select from '@/components/UI/select'
 import { Actions } from '@/components/actions'
 import { Separator } from '@/components/separator'
@@ -8,8 +8,12 @@ export default function EquipmentTesting() {
     <form>
       <div className="grid grid-cols-4 grid-rows-6 gap-4">
         <div className="col-span-2 row-span-3 grid grid-cols-2 gap-4">
-          <InputText label="IMEI" hasSearchButton className="col-span-full" />
-          <InputText label="Placa" />
+          <InputText.Root label="IMEI">
+            <InputText.Input placeHolder="Digite o seu IMEI..." />
+          </InputText.Root>
+          <InputText.Root label="Placa">
+            <InputText.Input placeHolder="Digite a placa do veículo..." />
+          </InputText.Root>
           <Select.Root>
             <Select.Trigger
               label="Com Bloqueio"

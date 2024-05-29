@@ -10,16 +10,36 @@ export const ReceiptOfOrderFieldset = () => {
         <div className="col-span-2 grid grid-rows-6 gap-4">
           <div className="row-span-2 grid grid-cols-2 gap-4">
             <InputText.Root label="Nome do Cliente">
-              <InputText.Input placeHolder="Digite o nome do cliente..." />
+              <InputText.Input
+                placeHolder="Digite o nome do cliente..."
+                value="Gabriel Pedroso"
+                disabled
+                readOnly
+              />
             </InputText.Root>
             <InputText.Root label="E-mail">
-              <InputText.Input placeHolder="Digite o endereço de e-mail..." />
+              <InputText.Input
+                placeHolder="Digite o endereço de e-mail..."
+                value="gabriellucaspd@gmail.com"
+                disabled
+                readOnly
+              />
             </InputText.Root>
             <InputText.Root label="Telefone">
-              <InputText.Input placeHolder="Digite o número de telefone..." />
+              <InputText.Input
+                placeHolder="Digite o número de telefone..."
+                value="41 9 8403-0800"
+                disabled
+                readOnly
+              />
             </InputText.Root>
             <InputText.Root label="Plano Escolhido">
-              <InputText.Input placeHolder="Digite o plano escolhido..." />
+              <InputText.Input
+                placeHolder="Digite o plano escolhido..."
+                value="Plano Recorrente"
+                disabled
+                readOnly
+              />
             </InputText.Root>
           </div>
 
