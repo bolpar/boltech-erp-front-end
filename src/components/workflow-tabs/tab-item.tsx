@@ -31,7 +31,7 @@ export const TabItem = ({ title, path, state = 'pendent' }: TabItemProps) => {
 
         {isSelected && (
           <motion.div
-            layoutId="activeTab"
+            // layoutId="activeTab"
             className="absolute -bottom-px  left-0 right-0 h-0.5 bg-green-400"
           />
         )}

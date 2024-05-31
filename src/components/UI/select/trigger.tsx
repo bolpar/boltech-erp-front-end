@@ -10,7 +10,7 @@ interface TriggerProps extends SelectPrimitive.SelectTriggerProps {
 export const Trigger = ({ label, placeholder, className }: TriggerProps) => {
   return (
     <div className="relative flex flex-col">
-      <label className="mb-2 pl-2 text-xs font-bold text-zinc-700 before:absolute before:mr-2 before:mt-[0.10rem] before:h-3 before:w-0.5 before:-translate-x-[0.50rem]  before:bg-green-500 dark:text-white">
+      <label className="mb-2 pl-2 text-xs font-semibold text-zinc-700 before:absolute before:mr-2 before:mt-[0.10rem] before:h-3 before:w-0.5 before:-translate-x-[0.50rem]  before:bg-green-500 dark:text-white">
         {label}
       </label>
       <SelectPrimitive.Trigger
