@@ -22,7 +22,7 @@ export const TabItem = ({ title, path, state = 'pendent' }: TabItemProps) => {
           className={
             isSelected
               ? 'flex items-center justify-center gap-4 text-center text-green-400'
-              : 'flex items-center justify-center gap-4 rounded-lg text-center transition-all hover:text-green-300'
+              : 'flex items-center justify-center gap-4 text-center transition-all hover:text-green-300'
           }
         >
           {title}
@@ -31,6 +31,7 @@ export const TabItem = ({ title, path, state = 'pendent' }: TabItemProps) => {
 
         {isSelected && (
           <motion.div
+            // TODO: Fix active tab animation
             // layoutId="activeTab"
             className="absolute -bottom-px  left-0 right-0 h-0.5 bg-green-400"
           />

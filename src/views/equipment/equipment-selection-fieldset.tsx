@@ -12,38 +12,25 @@ export const EquipmentSelectionFieldset = () => {
         SELEÇÃO DE EQUIPAMENTO
       </LegendFieldset>
 
-      <InputText.Root label="Tipo do Aparelho" className="row-span-1">
-        <InputText.Input
-          placeHolder="Digite o tipo do aparelho..."
-          value="Aparelho Boltech"
-          disabled
-          readOnly
-        />
-      </InputText.Root>
-      <InputText.Root label="Quantidade" className="row-span-1">
-        <InputText.Input
-          placeHolder="Digite a quantidade..."
-          value="1/3"
-          disabled
-          readOnly
-        />
-      </InputText.Root>
+      <div className="col-span-2 row-span-3 grid grid-cols-2 gap-4">
+        <InputText.Root label="Tipo do Aparelho" className="row-span-1">
+          <InputText.Input
+            placeHolder="Digite o tipo do aparelho..."
+            value="Aparelho Boltech"
+            disabled
+            readOnly
+          />
+        </InputText.Root>
+        <InputText.Root label="Quantidade" className="row-span-1">
+          <InputText.Input
+            placeHolder="Digite a quantidade..."
+            value="1/3"
+            disabled
+            readOnly
+          />
+        </InputText.Root>
 
-      <div className="row-span-4 flex flex-col items-start gap-4 rounded border border-green-500 p-6">
-        <span className="text-xs font-semibold text-zinc-700 dark:text-white">
-          Checklist saída de rastreador
-        </span>
-        <Checkbox label="Rastreador" />
-        <Checkbox label="Chicote" />
-        <Checkbox label="Rele" />
-        <Checkbox label="Fusível" />
-        <Checkbox label="Manual" />
-        <Checkbox label="Contrato" />
-        <Checkbox label="Etiqueta Garantia" />
-      </div>
-
-      <div className="col-span-full row-span-1 grid grid-cols-3 gap-4">
-        <div className="col-span-2 grid grid-cols-3 gap-4">
+        <div className="col-span-full grid h-fit grid-cols-3 gap-4">
           <Select.Root>
             <Select.Trigger label="IMEI" placeholder="Selecione o IMEI..." />
             <Select.Content>
@@ -62,6 +49,7 @@ export const EquipmentSelectionFieldset = () => {
             <Select.Trigger
               label="Operadora"
               placeholder="Selecione a Operadora..."
+              className="h-full"
             />
             <Select.Content>
               <Select.Item value="banana">Banana</Select.Item>
@@ -71,11 +59,26 @@ export const EquipmentSelectionFieldset = () => {
             </Select.Content>
           </Select.Root>
         </div>
+
+        <div>
+          <Button icon={CheckIcon} color="success">
+            Cadastrar
+          </Button>
+        </div>
       </div>
 
-      <Button icon={CheckIcon} color="success">
-        Cadastrar
-      </Button>
+      <div className="col-span-1 row-span-4 flex flex-col items-start gap-4 rounded border border-neutral-300 p-6 dark:border-green-500 dark:bg-darkModeContrast">
+        <span className="text-xs font-semibold text-zinc-700 dark:text-white">
+          Checklist saída de rastreador
+        </span>
+        <Checkbox label="Rastreador" />
+        <Checkbox label="Chicote" />
+        <Checkbox label="Rele" />
+        <Checkbox label="Fusível" />
+        <Checkbox label="Manual" />
+        <Checkbox label="Contrato" />
+        <Checkbox label="Etiqueta Garantia" />
+      </div>
     </fieldset>
   )
 }

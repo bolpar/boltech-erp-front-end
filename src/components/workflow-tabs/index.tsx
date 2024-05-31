@@ -4,7 +4,7 @@ import { TabItem } from './tab-item'
 
 export const WorkFlowTabs = () => {
   return (
-    <div className="justify mt-3.5 flex items-center gap-4 border-b border-zinc-200 dark:border-borderDarkMode">
+    <div className="mt-3.5 flex items-center gap-4 border-b border-zinc-200 dark:border-borderDarkMode">
       <TabItem title="Dados" path="/vendas/dados" state="success" />
       <TabItem title="Veículos Instalador" path="/vendas/veiculos-instalador" />
       <TabItem title="Equipamento" path="/vendas/equipamento" />

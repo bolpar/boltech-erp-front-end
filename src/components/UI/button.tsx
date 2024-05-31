@@ -6,11 +6,17 @@ const button = tv({
 
   variants: {
     color: {
+      default: 'bg-blue-500 hover:bg-blue-600',
+      register: 'bg-green-500 hover:bg-green-600',
       success: 'bg-green-500 hover:bg-green-600',
       error: 'bg-red-500 hover:bg-red-600',
       pendent: 'bg-yellow-500 hover:bg-yellow-600',
-      edit: 'bg-blue-500 hover:bg-blue-600 ',
+      edit: 'bg-blue-500 hover:bg-blue-600',
     },
+  },
+
+  defaultVariants: {
+    color: 'default',
   },
 })
 
