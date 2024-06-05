@@ -9,7 +9,7 @@ export default function SalesLayout({
 }>) {
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-white pt-8 dark:bg-darkMode">
+      <header className="sticky top-0 z-10 w-full bg-white pt-8 dark:bg-darkMode">
         <div className="flex w-full items-center justify-between">
           <div className="flex items-center gap-2">
             <ShoppingBasketIcon className="h-5 w-5 text-zinc-500 dark:text-white" />

@@ -41,7 +41,7 @@ export const InstallationFieldset = () => {
       <TextArea label="Observações" />
 
       <div className="col-span-full mt-8">
-        <Button color="success" icon={CheckIcon}>
+        <Button variant="success" icon={CheckIcon}>
           Cadastrar
         </Button>
       </div>

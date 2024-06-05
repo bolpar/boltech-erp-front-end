@@ -1,11 +1,11 @@
-import { ElementType, ReactNode } from 'react'
+import { ComponentProps, ElementType, ReactNode } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 
 const button = tv({
   base: 'px-4 py-2 font-medium text-sm font-normal rounded transition-all flex items-center justify-center gap-1 outline-none focus-within:border-black focus-within:ring-2 focus-within:ring-black dark:focus-within:border-white dark:focus-within:ring-2 dark:focus-within:ring-white text-white w-fit dark:text-zinc-900',
 
   variants: {
-    color: {
+    variant: {
       default: 'bg-blue-500 hover:bg-blue-600',
       register: 'bg-green-500 hover:bg-green-600',
       success: 'bg-green-500 hover:bg-green-600',
@@ -16,18 +16,26 @@ const button = tv({
   },
 
   defaultVariants: {
-    color: 'default',
+    variant: 'default',
   },
 })
 
-interface ButtonProps extends VariantProps<typeof button> {
-  children: ReactNode
+interface ButtonProps
+  extends ComponentProps<'button'>,
+    VariantProps<typeof button> {
   icon: ElementType
+  children: ReactNode
 }
 
-export const Button = ({ color, icon: Icon, children }: ButtonProps) => {
+export const Button = ({
+  icon: Icon,
+  children,
+  variant,
+  className,
+  ...props
+}: ButtonProps) => {
   return (
-    <button className={button({ color })}>
+    <button {...props} className={button({ variant, className })}>
       <Icon className="h-4 w-4 text-white dark:text-zinc-900" />
       {children}
     </button>

@@ -1,11 +1,14 @@
 import * as InputText from '@/components/UI/input-text'
 import { TextArea } from '@/components/UI/textarea'
 import { LegendFieldset } from '@/components/legend-fieldset'
+import { CardReceiptModalContent } from './card-receipt-modal-content'
+import { PixModalContent } from './pix-modal-content'
 
 export const ReceiptOfOrderFieldset = () => {
   return (
     <>
       <LegendFieldset className="my-10">RECEBIMENTO DO PEDIDO</LegendFieldset>
+
       <div className="mb-16 mt-8 grid h-fit grid-cols-3 gap-4">
         <div className="col-span-2 grid grid-rows-6 gap-4">
           <div className="row-span-2 grid grid-cols-2 gap-4">
@@ -60,7 +63,9 @@ export const ReceiptOfOrderFieldset = () => {
               readOnly
               disabled
             />
-            <InputText.ModalButton />
+            <InputText.ModalButton>
+              <PixModalContent />
+            </InputText.ModalButton>
           </InputText.Root>
           <InputText.Root label="Cartão">
             <InputText.Input
@@ -69,7 +74,9 @@ export const ReceiptOfOrderFieldset = () => {
               readOnly
               disabled
             />
-            <InputText.ModalButton />
+            <InputText.ModalButton>
+              <CardReceiptModalContent />
+            </InputText.ModalButton>
           </InputText.Root>
           <InputText.Root label="Boleto">
             <InputText.Input
@@ -78,7 +85,9 @@ export const ReceiptOfOrderFieldset = () => {
               readOnly
               disabled
             />
-            <InputText.ModalButton />
+            <InputText.ModalButton>
+              <PixModalContent />
+            </InputText.ModalButton>
           </InputText.Root>
           <InputText.Root label="Crédito">
             <InputText.Input
@@ -87,7 +96,9 @@ export const ReceiptOfOrderFieldset = () => {
               readOnly
               disabled
             />
-            <InputText.ModalButton />
+            <InputText.ModalButton>
+              <PixModalContent />
+            </InputText.ModalButton>
           </InputText.Root>
           <InputText.Root label="Desconto">
             <InputText.Input placeHolder="Digite o valor..." />

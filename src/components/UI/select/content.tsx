@@ -13,7 +13,7 @@ export const Content = ({ children, ...rest }: ContentProps) => {
         side="bottom"
         position="popper"
         sideOffset={8}
-        className="overflow-hidden rounded border bg-white p-2 text-sm dark:border-green-500 dark:bg-neutral-600"
+        className="z-[99999] overflow-hidden rounded border bg-white p-2 text-sm dark:border-green-500 dark:bg-neutral-600"
         {...rest}
       >
         <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>

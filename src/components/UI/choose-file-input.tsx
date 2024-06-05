@@ -10,7 +10,7 @@ export const ChooseFileInput = () => {
         </span>
       </div>
 
-      <Button color="edit" icon={FileInputIcon}>
+      <Button variant="edit" icon={FileInputIcon}>
         Enviar Fotos
       </Button>
 

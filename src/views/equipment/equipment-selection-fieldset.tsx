@@ -7,7 +7,7 @@ import { CheckIcon } from 'lucide-react'
 
 export const EquipmentSelectionFieldset = () => {
   return (
-    <fieldset className="grid grid-cols-3 grid-rows-4 gap-4">
+    <fieldset className="grid grid-cols-3 grid-rows-5 gap-4">
       <LegendFieldset className="mb-10 mt-0">
         SELEÇÃO DE EQUIPAMENTO
       </LegendFieldset>
@@ -61,13 +61,13 @@ export const EquipmentSelectionFieldset = () => {
         </div>
 
         <div>
-          <Button icon={CheckIcon} color="success">
+          <Button icon={CheckIcon} variant="success">
             Cadastrar
           </Button>
         </div>
       </div>
 
-      <div className="col-span-1 row-span-4 flex flex-col items-start gap-4 rounded border border-neutral-300 p-6 dark:border-green-500 dark:bg-darkModeContrast">
+      <div className="col-span-1 row-span-5 flex flex-col items-start gap-4 rounded border border-neutral-300 p-6 dark:border-green-500 dark:bg-darkModeContrast">
         <span className="text-xs font-semibold text-zinc-700 dark:text-white">
           Checklist saída de rastreador
         </span>

@@ -5,12 +5,7 @@ interface TableProps extends ComponentProps<'table'> {}
 
 export const Table = ({ className }: TableProps) => {
   return (
-    <div
-      className={twMerge(
-        'overflow-hidden rounded border border-green-500 shadow-sm',
-        className,
-      )}
-    >
+    <div className={twMerge('overflow-hidden rounded shadow-sm', className)}>
       <table className="w-full">
         <thead className="bg-green-400 dark:bg-green-500">
           <tr>
