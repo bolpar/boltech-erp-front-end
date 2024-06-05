@@ -21,7 +21,7 @@ export const ModalButton = ({ children }: ModalButtonProps) => {
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-40 bg-black/80" />
 
-        <Dialog.Content className="fixed right-0 top-0 z-50 h-screen w-[45rem] bg-white dark:bg-darkMode">
+        <Dialog.Content className="fixed right-0 top-0 z-50 h-screen w-[50rem] bg-white dark:bg-darkMode">
           <Dialog.Close className="absolute right-4 top-4 rounded bg-neutral-200 p-2 dark:bg-darkModeContrast">
             <XIcon />
           </Dialog.Close>

@@ -3,6 +3,7 @@ import { TextArea } from '@/components/UI/textarea'
 import { LegendFieldset } from '@/components/legend-fieldset'
 import { CardReceiptModalContent } from './card-receipt-modal-content'
 import { PixModalContent } from './pix-modal-content'
+import { ReleaseOfTicketsModalContent } from './release-of-tickets-modal-content'
 
 export const ReceiptOfOrderFieldset = () => {
   return (
@@ -86,7 +87,7 @@ export const ReceiptOfOrderFieldset = () => {
               disabled
             />
             <InputText.ModalButton>
-              <PixModalContent />
+              <ReleaseOfTicketsModalContent />
             </InputText.ModalButton>
           </InputText.Root>
           <InputText.Root label="Crédito">
@@ -97,7 +98,8 @@ export const ReceiptOfOrderFieldset = () => {
               disabled
             />
             <InputText.ModalButton>
-              <PixModalContent />
+              {/* <PixModalContent /> */}
+              <div />
             </InputText.ModalButton>
           </InputText.Root>
           <InputText.Root label="Desconto">
