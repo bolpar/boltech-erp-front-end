@@ -3,7 +3,6 @@ import { Separator } from '@/components/separator'
 import { Button } from '@/components/UI/button'
 import * as InputText from '@/components/UI/input-text'
 import * as Select from '@/components/UI/select'
-import { SwitchTheme } from '@/components/UI/switch-theme'
 import { TextArea } from '@/components/UI/textarea'
 import { CheckIcon, XIcon } from 'lucide-react'
 import Image from 'next/image'
@@ -11,11 +10,10 @@ import Image from 'next/image'
 export const PixModalContent = () => {
   return (
     <>
-      <header className="flex items-center justify-between">
+      <header>
         <h2 className="text-lg font-semibold text-zinc-700 dark:text-white">
           Cobrança PIX
         </h2>
-        <SwitchTheme />
       </header>
 
       <Separator className="my-4" />

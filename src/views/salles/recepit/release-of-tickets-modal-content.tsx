@@ -1,19 +1,17 @@
 import { Button } from '@/components/UI/button'
 import * as Select from '@/components/UI/select'
-import { SwitchTheme } from '@/components/UI/switch-theme'
 import * as Card from '@/components/card'
 import { Separator } from '@/components/separator'
 import { Table } from '@/components/table'
 import { CheckIcon, XIcon } from 'lucide-react'
 
-export const CardReceiptModalContent = () => {
+export const ReleaseOfTicketsModalContent = () => {
   return (
     <>
-      <header className="flex items-center justify-between">
+      <header>
         <h2 className="text-lg font-semibold text-zinc-700 dark:text-white">
-          Recebimento Cartão
+          Lançamentos de Boletos
         </h2>
-        <SwitchTheme />
       </header>
 
       <Separator className="my-4" />
@@ -27,20 +25,14 @@ export const CardReceiptModalContent = () => {
 
         <div className="grid grid-cols-2 gap-4">
           <Select.Root>
-            <Select.Trigger
-              placeholder="Selecione o cartão..."
-              label="Cartão"
-            />
+            <Select.Trigger placeholder="Selecione a conta..." label="Conta" />
             <Select.Content>
               <Select.Item value="credito">Crédito</Select.Item>
               <Select.Item value="debito">Débito</Select.Item>
             </Select.Content>
           </Select.Root>
           <Select.Root>
-            <Select.Trigger
-              placeholder="Selecione o número de parcelas..."
-              label="Parcelas"
-            />
+            <Select.Trigger placeholder="Selecione o prazo..." label="Prazo" />
             <Select.Content>
               <Select.Item value="1">1x</Select.Item>
               <Select.Item value="2">2x</Select.Item>

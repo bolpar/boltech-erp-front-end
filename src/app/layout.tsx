@@ -15,7 +15,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="grid min-h-screen grid-cols-app dark:bg-darkMode">
           <SideBar />
-          {/* pt-24 lg:pt-8 */}
+
           <main className="bg-white px-4 pb-12 dark:bg-darkMode lg:col-start-2 lg:px-8">
             <ThemeProvider attribute="class">{children}</ThemeProvider>
           </main>

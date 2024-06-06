@@ -1,12 +1,16 @@
 import { SwitchTheme } from '@/components/UI/switch-theme'
 import { WorkFlowTabs } from '@/components/workflow-tabs'
 import { ShoppingBasketIcon } from 'lucide-react'
+import { cookies } from 'next/headers'
 
 export default function SalesLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const cookieStore = cookies()
+  const theme = cookieStore.get('theme')
+
   return (
     <>
       <header className="sticky top-0 z-10 w-full bg-white pt-8 dark:bg-darkMode">
@@ -17,7 +21,8 @@ export default function SalesLayout({
               Fluxo de Vendas (Dados)
             </h1>
           </div>
-          <SwitchTheme />
+
+          <SwitchTheme cookieTheme={theme?.value as string} />
         </div>
 
         <WorkFlowTabs />

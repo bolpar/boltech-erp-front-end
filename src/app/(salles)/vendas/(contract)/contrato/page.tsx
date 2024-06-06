@@ -1,7 +1,7 @@
 import * as Select from '@/components/UI/select'
 import { Actions } from '@/components/actions'
 import { Separator } from '@/components/separator'
-import { ImagePreview } from '@/views/contract/image-preview'
+import { ImagePreview } from '@/views/salles/contract/image-preview'
 
 export default function Contract() {
   return (
