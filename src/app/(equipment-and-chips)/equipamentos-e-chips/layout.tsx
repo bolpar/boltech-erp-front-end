@@ -1,9 +1,9 @@
 import { SwitchTheme } from '@/components/UI/switch-theme'
-import { WorkFlowTabs } from '@/views/salles/workflow-tabs'
-import { ShoppingBasketIcon } from 'lucide-react'
+import { WorkFlowTabs } from '@/views/equipment-and-chips/workflow-tabs'
+import { CpuIcon } from 'lucide-react'
 import { cookies } from 'next/headers'
 
-export default function SalesLayout({
+export default function EquipamentAndChipsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
@@ -16,9 +16,9 @@ export default function SalesLayout({
       <header className="sticky top-0 z-10 w-full bg-white pt-8 dark:bg-darkMode">
         <div className="flex w-full items-center justify-between">
           <div className="flex items-center gap-2">
-            <ShoppingBasketIcon className="h-5 w-5 text-zinc-500 dark:text-white" />
+            <CpuIcon className="h-5 w-5 text-zinc-500 dark:text-white" />
             <h1 className="text-lg font-medium text-zinc-500 dark:text-white">
-              Fluxo de Vendas (Dados)
+              Lista de Equipamentos (Equipamentos e Chips)
             </h1>
           </div>
 

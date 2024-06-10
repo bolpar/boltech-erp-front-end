@@ -1,9 +1,18 @@
 import { FileImageIcon, FileInputIcon, XIcon } from 'lucide-react'
+import { ComponentProps } from 'react'
+import { twMerge } from 'tailwind-merge'
 import { Button } from './button'
 
-export const ChooseFileInput = () => {
+type ChooseFileInputProps = ComponentProps<'div'>
+
+export const ChooseFileInput = ({ className }: ChooseFileInputProps) => {
   return (
-    <div className="col-span-full w-fit rounded border-2 border-dashed p-4 dark:border-green-500 dark:bg-darkModeContrast">
+    <div
+      className={twMerge(
+        'col-span-full w-fit rounded border-2 border-dashed p-4 dark:border-green-500 dark:bg-darkModeContrast',
+        className,
+      )}
+    >
       <div className="mb-2">
         <span className="text-xs">
           Faça o upload de imagens clicando em <b>Enviar Fotos</b>

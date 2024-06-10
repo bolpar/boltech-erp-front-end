@@ -34,7 +34,11 @@ export const SideBar = () => {
         <NavItem title="Financeiro" path="/" icon={BarChart3Icon} />
         <NavItem title="Fornecedores" path="/" icon={PackageIcon} />
         <NavItem title="Relatórios" path="/" icon={FileTextIcon} />
-        <NavItem title="Equipamentos e Chips" path="/" icon={CpuIcon} />
+        <NavItem
+          title="Equipamentos e Chips"
+          path="/equipamentos-e-chips/lista-de-equipamentos"
+          icon={CpuIcon}
+        />
         <NavItem title="Suporte" path="/" icon={HeadsetIcon} />
         <NavItem title="Configurações" path="/" icon={SettingsIcon} />
         <NavItem title="Emissão NFSE" path="/" icon={ScrollTextIcon} />

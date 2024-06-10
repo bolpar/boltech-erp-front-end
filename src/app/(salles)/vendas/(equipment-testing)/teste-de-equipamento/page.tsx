@@ -10,7 +10,7 @@ export default function EquipmentTesting() {
   return (
     <form>
       <div className="grid grid-cols-4 grid-rows-6 gap-4">
-        <div className="col-span-2 row-span-6 grid grid-cols-2 gap-4">
+        <div className="col-span-2 row-span-5 grid grid-cols-2 gap-4">
           <InputText.Root label="IMEI">
             <InputText.Input placeHolder="Digite o seu IMEI..." />
           </InputText.Root>
@@ -57,7 +57,7 @@ export default function EquipmentTesting() {
             </Select.Content>
           </Select.Root>
 
-          <ChooseFileInput />
+          <ChooseFileInput className="mt-4" />
         </div>
 
         <div className="col-span-2 row-span-6 ">

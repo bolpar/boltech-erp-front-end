@@ -3,14 +3,19 @@ import { CircleDollarSignIcon } from 'lucide-react'
 export const BalanceFieldset = () => {
   return (
     <>
-      <span className="text-xs text-zinc-700 dark:text-white">Saldo</span>
+      <span className="text-sm text-zinc-700 dark:text-white">
+        Confira abaixo o saldo atual
+      </span>
 
-      <div className="mt-2 flex w-fit items-center justify-center gap-2 rounded-lg border border-green-500 p-6 ">
-        <CircleDollarSignIcon className="h-6 w-6 text-zinc-800 dark:text-white" />
-        <h4 className="font-bold text-zinc-950 dark:text-green-500">
-          R$ 1.080 <span className="text-zinc-950 dark:text-white">/</span> R$
-          0, 00
-        </h4>
+      <div className="mt-2 flex w-fit items-center justify-center gap-6 rounded-lg border-b-4 border-green-700 bg-green-400 p-4">
+        <div className="rounded-full bg-white p-2 dark:bg-zinc-700">
+          <CircleDollarSignIcon className="h-10 w-10 text-green-500" />
+        </div>
+
+        <div className="text-lg text-white dark:text-zinc-700">
+          <span>Saldo Atual</span>
+          <h4 className="font-black">R$ 1.080, 00 / R$ 0, 00</h4>
+        </div>
       </div>
     </>
   )
