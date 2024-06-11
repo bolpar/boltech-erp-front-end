@@ -1,44 +1,53 @@
+import * as Table from '@/components/table/index'
 import { ComponentProps } from 'react'
-import { twMerge } from 'tailwind-merge'
 
 interface ClientsListProps extends ComponentProps<'div'> {}
 
 export const ClientsList = ({ className }: ClientsListProps) => {
   return (
-    <div className={twMerge('overflow-hidden rounded shadow-sm', className)}>
-      <table className="w-full">
-        <thead className="bg-green-400 dark:bg-green-500">
-          <tr>
-            <th className="py-2 text-xs text-green-800">Cliente</th>
-            <th className="py-2 text-xs text-green-800">CPF/CNPJ</th>
-            <th className="py-2 text-xs text-green-800">Telefone</th>
-            <th className="py-2 text-xs text-green-800">Email</th>
-          </tr>
-        </thead>
+    <div className={className}>
+      <Table.Root>
+        <Table.Head>
+          <Table.HeadItem>Cliente</Table.HeadItem>
+          <Table.HeadItem>CPF/CNPJ</Table.HeadItem>
+          <Table.HeadItem>Telefone</Table.HeadItem>
+          <Table.HeadItem>Email</Table.HeadItem>
+        </Table.Head>
 
-        <tbody className="bg-white text-center text-sm text-zinc-800 dark:bg-neutral-600 dark:text-white">
-          <tr>
-            <td className="py-2">Gabriel Pedroso</td>
-            <td className="py-2">999.999999-99</td>
-            <td className="py-2">41 9 8403-0800</td>
-            <td className="py-2">gabrielpedroso@email.com</td>
-          </tr>
+        <Table.Body>
+          <Table.Row>
+            <Table.BodyItem>Gabriel Pedroso</Table.BodyItem>
+            <Table.BodyItem>999.999999-99</Table.BodyItem>
+            <Table.BodyItem>41 9 8403-0800</Table.BodyItem>
+            <Table.BodyItem>gabrielpedroso@email.com</Table.BodyItem>
+          </Table.Row>
 
-          <tr className="bg-zinc-200 dark:bg-neutral-800">
-            <td className="py-2">Gabriel Pedroso</td>
-            <td className="py-2">999.999999-99</td>
-            <td className="py-2">41 9 8403-0800</td>
-            <td className="py-2">gabrielpedroso@email.com</td>
-          </tr>
+          <Table.Row>
+            <Table.BodyItem alternative>Gabriel Pedroso</Table.BodyItem>
+            <Table.BodyItem alternative>999.999999-99</Table.BodyItem>
+            <Table.BodyItem alternative>41 9 8403-0800</Table.BodyItem>
+            <Table.BodyItem alternative>
+              gabrielpedroso@email.com
+            </Table.BodyItem>
+          </Table.Row>
 
-          <tr>
-            <td className="py-2">Gabriel Pedroso</td>
-            <td className="py-2">999.999999-99</td>
-            <td className="py-2">41 9 8403-0800</td>
-            <td className="py-2">gabrielpedroso@email.com</td>
-          </tr>
-        </tbody>
-      </table>
+          <Table.Row>
+            <Table.BodyItem>Gabriel Pedroso</Table.BodyItem>
+            <Table.BodyItem>999.999999-99</Table.BodyItem>
+            <Table.BodyItem>41 9 8403-0800</Table.BodyItem>
+            <Table.BodyItem>gabrielpedroso@email.com</Table.BodyItem>
+          </Table.Row>
+
+          <Table.Row>
+            <Table.BodyItem alternative>Gabriel Pedroso</Table.BodyItem>
+            <Table.BodyItem alternative>999.999999-99</Table.BodyItem>
+            <Table.BodyItem alternative>41 9 8403-0800</Table.BodyItem>
+            <Table.BodyItem alternative>
+              gabrielpedroso@email.com
+            </Table.BodyItem>
+          </Table.Row>
+        </Table.Body>
+      </Table.Root>
     </div>
   )
 }

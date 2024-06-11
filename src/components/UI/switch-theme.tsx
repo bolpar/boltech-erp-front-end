@@ -16,6 +16,19 @@ export const SwitchTheme = ({ cookieTheme }: SwitchThemeProps) => {
   const { theme: nextTheme, setTheme: setNextTheme } = useTheme()
 
   async function changeTheme() {
+    console.log('Chamou!')
+    console.log(theme)
+    console.log(cookieTheme)
+    if (!cookieTheme) {
+      setTheme('dark')
+      setNextTheme('dark')
+
+      await fetch('/api/cookies/theme/', {
+        method: 'POST',
+        body: JSON.stringify({ theme: 'light' }),
+      })
+    }
+
     if (theme === 'light') {
       setTheme('dark')
       setNextTheme('dark')
