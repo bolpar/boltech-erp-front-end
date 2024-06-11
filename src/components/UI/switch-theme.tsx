@@ -19,6 +19,7 @@ export const SwitchTheme = ({ cookieTheme }: SwitchThemeProps) => {
     console.log('Chamou!')
     console.log(theme)
     console.log(cookieTheme)
+
     if (!cookieTheme) {
       setTheme('dark')
       setNextTheme('dark')

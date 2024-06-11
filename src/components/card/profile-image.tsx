@@ -8,7 +8,7 @@ export const ProfileImage = () => {
         alt="Foto de perfil"
         width={100}
         height={100}
-        className="h-16 w-16 rounded-full border-2 border-white dark:border-green-500"
+        className="h-16 w-16 rounded-full"
       />
 
       <div className="h-16 w-px bg-zinc-200/80 dark:bg-green-500" />
