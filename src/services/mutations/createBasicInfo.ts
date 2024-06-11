@@ -23,7 +23,7 @@ interface CreateBasicInfoRequest {
           nome: string
           data_nascimento: string
           documento: string
-          documento_tipo: CPF
+          // documento_tipo: CPF
           is_cliente: boolean
           observacao: string
           publicidade: string
@@ -36,7 +36,7 @@ interface CreateBasicInfoRequest {
           observacao: string
         }
       }
-      contatos: { create: { tipo: Casa; valor: string; padrao: boolean } }
+      contatos: { create: { valor: string; padrao: boolean } }
       endereco: {
         create: {
           numero: string
