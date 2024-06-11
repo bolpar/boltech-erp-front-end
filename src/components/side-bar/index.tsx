@@ -30,7 +30,7 @@ export const SideBar = () => {
           path="/vendas/dados"
           icon={ShoppingBasketIcon}
         />
-        <NavItem title="Clientes" path="/" icon={UsersIcon} />
+        <NavItem title="Clientes" path="/clientes/pesquisa" icon={UsersIcon} />
         <NavItem title="Financeiro" path="/" icon={BarChart3Icon} />
         <NavItem title="Fornecedores" path="/" icon={PackageIcon} />
         <NavItem title="Relatórios" path="/" icon={FileTextIcon} />

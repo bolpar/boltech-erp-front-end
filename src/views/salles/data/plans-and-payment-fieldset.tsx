@@ -8,6 +8,7 @@ export const PlansAndPaymentFieldset = () => {
   return (
     <fieldset className="grid grid-cols-3 gap-4">
       <LegendFieldset>PLANOS E PAGAMENTO</LegendFieldset>
+
       <PlansModal />
 
       <div className="col-span-full grid grid-cols-3 gap-4">

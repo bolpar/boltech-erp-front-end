@@ -1,3 +1,13 @@
+import { Separator } from '@/components/separator'
+import { ClientsList } from '@/views/clients/financial/clients-list'
+import { FinancialHeader } from '@/views/clients/financial/financial-header'
+
 export default function Financial() {
-  return <h1>Financeiro</h1>
+  return (
+    <>
+      <FinancialHeader />
+      <Separator />
+      <ClientsList />
+    </>
+  )
 }

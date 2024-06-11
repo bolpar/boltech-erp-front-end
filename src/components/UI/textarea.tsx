@@ -12,8 +12,8 @@ export const TextArea = ({ label, className }: TextAreaProps) => {
         {label}
       </span>
       <textarea
+        className="dark:darkModeContrast h-full w-full resize-none rounded border border-neutral-300 bg-white p-3 text-xs shadow-sm outline-none placeholder:text-zinc-400 focus-within:border-green-300 focus-within:ring-2 focus-within:ring-green-100 dark:border-zinc-800 dark:bg-darkModeContrast dark:text-white dark:placeholder:text-white/40 dark:focus-within:border-green-600  dark:focus-within:ring-green-400"
         placeholder="Digite aqui as observações adicionais..."
-        className="dark:darkModeContrast h-full w-full resize-none rounded border border-neutral-300 bg-white p-3 text-xs shadow-sm outline-none focus-within:border-green-300 focus-within:ring-2 focus-within:ring-green-100 dark:border-green-500 dark:bg-darkModeContrast dark:text-white dark:placeholder:text-white dark:focus-within:border-green-600 dark:focus-within:ring-green-400"
       />
     </label>
   )
