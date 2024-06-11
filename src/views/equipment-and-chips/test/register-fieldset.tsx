@@ -31,42 +31,53 @@ export const RegisterFieldset = () => {
 
         <div className="col-span-full flex items-center justify-between rounded border bg-neutral-100 p-4 shadow-sm dark:border-green-500 dark:bg-darkModeContrast">
           <div className="flex items-center text-xs">
-            <span className="mr-1 text-green-500">Ignição: </span>
-            <h4 className="font-bold">Ligada</h4>
+            <span className="mr-1 font-bold text-green-500">Ignição: </span>
+            <h4 className="font-bold text-zinc-700 dark:text-white">Ligada</h4>
           </div>
           <div className="flex items-center text-xs">
-            <span className="mr-1 text-green-500">Corte: </span>
-            <h4 className="font-bold">Desbloqueado</h4>
+            <span className="mr-1 font-bold text-green-500">Corte: </span>
+            <h4 className="font-bold text-zinc-700 dark:text-white">
+              Desbloqueado
+            </h4>
           </div>
           <div className="flex items-center text-xs">
-            <span className="mr-1 text-green-500">Alimentação: </span>
-            <h4 className="font-bold">Com alimentação</h4>
+            <span className="mr-1 font-bold text-green-500">Alimentação: </span>
+            <h4 className="font-bold text-zinc-700 dark:text-white">
+              Com alimentação
+            </h4>
           </div>
           <div className="flex items-center text-xs">
-            <span className="mr-1 text-green-500">Sinal GPS: </span>
-            <h4 className="font-bold">OK</h4>
+            <span className="mr-1 font-bold text-green-500">Sinal GPS: </span>
+            <h4 className="font-bold text-zinc-700 dark:text-white">OK</h4>
           </div>
         </div>
+
         <div className="col-span-full rounded border bg-neutral-100 p-4 shadow-sm dark:border-green-500 dark:bg-darkModeContrast">
           <div className="flex items-center text-xs">
-            <span className="mr-1 text-green-500">
+            <span className="mr-1 font-bold text-green-500">
               Data/Hora do rastreador:
             </span>
-            <h4 className="font-bold">11/10/2024 17:40:16</h4>
+            <h4 className="font-bold text-zinc-700 dark:text-white">
+              11/10/2024 17:40:16
+            </h4>
           </div>
           <div className="flex items-center text-xs">
-            <span className="mr-1 text-green-500">Data/Hora do Servidor:</span>
-            <h4 className="font-bold">11/10/2024 17:40:16</h4>
+            <span className="mr-1 font-bold text-green-500">
+              Data/Hora do Servidor:
+            </span>
+            <h4 className="font-bold text-zinc-700 dark:text-white">
+              11/10/2024 17:40:16
+            </h4>
           </div>
           <div className="flex items-center text-xs">
-            <span className="mr-1 text-green-500">Velocidade:</span>
-            <h4 className="font-bold">33</h4>
+            <span className="mr-1 font-bold text-green-500">Velocidade:</span>
+            <h4 className="font-bold text-zinc-700 dark:text-white">33</h4>
           </div>
           <div className="flex items-center text-xs">
-            <span className="mr-1 text-green-500">
+            <span className="mr-1 font-bold text-green-500">
               Voltagem de Alimentação:
             </span>
-            <h4 className="font-bold">14.0</h4>
+            <h4 className="font-bold text-zinc-700 dark:text-white">14.0</h4>
           </div>
         </div>
       </form>

@@ -1,6 +1,6 @@
 'use client'
 
-import { TabItem } from './tab-item'
+import { TabItem } from '@/components/workflow-tabs/tab-item'
 
 export const WorkFlowTabs = () => {
   return (

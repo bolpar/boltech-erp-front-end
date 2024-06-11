@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-interface TableProps extends ComponentProps<'table'> {}
+interface TableProps extends ComponentProps<'div'> {}
 
 export const Table = ({ className }: TableProps) => {
   return (
