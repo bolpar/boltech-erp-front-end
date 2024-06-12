@@ -33,6 +33,7 @@ export const InstallationFieldset = () => {
             <Select.Item value="3">Rua Carlos de Laer 1221, Hauer</Select.Item>
           </Select.Content>
         </Select.Root>
+
         <InputText.Root label="Data e Hora">
           <InputText.Input placeHolder="Digite aqui a data e hora..." />
         </InputText.Root>

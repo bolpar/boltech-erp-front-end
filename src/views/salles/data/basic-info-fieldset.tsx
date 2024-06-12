@@ -5,6 +5,7 @@ export const BasicInfoFieldset = () => {
   return (
     <fieldset className="grid grid-cols-3 gap-4">
       <LegendFieldset>INFORMAÇÕES BÁSICAS</LegendFieldset>
+
       <InputText.Root label="Nome">
         <InputText.Input placeHolder="Digite aqui seu nome..." />
       </InputText.Root>
