@@ -9,7 +9,7 @@ export const ChooseFileInput = ({ className }: ChooseFileInputProps) => {
   return (
     <div
       className={twMerge(
-        'col-span-full w-fit rounded border-2 border-dashed p-4 dark:border-green-500 dark:bg-darkModeContrast',
+        'col-span-full w-fit rounded border-2 border-dashed p-4 dark:border-neutral-800 dark:bg-darkModeContrast',
         className,
       )}
     >

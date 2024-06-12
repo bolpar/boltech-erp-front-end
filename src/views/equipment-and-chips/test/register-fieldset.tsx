@@ -29,7 +29,7 @@ export const RegisterFieldset = () => {
 
         <Separator className="col-span-full my-4" />
 
-        <div className="col-span-full flex items-center justify-between rounded border bg-neutral-100 p-4 shadow-sm dark:border-green-500 dark:bg-darkModeContrast">
+        <div className="col-span-full flex items-center justify-between rounded border bg-neutral-100 p-4 shadow-sm dark:border-neutral-800 dark:bg-darkModeContrast">
           <div className="flex items-center text-xs">
             <span className="mr-1 font-bold text-green-500">Ignição: </span>
             <h4 className="font-bold text-zinc-700 dark:text-white">Ligada</h4>
@@ -52,7 +52,7 @@ export const RegisterFieldset = () => {
           </div>
         </div>
 
-        <div className="col-span-full rounded border bg-neutral-100 p-4 shadow-sm dark:border-green-500 dark:bg-darkModeContrast">
+        <div className="col-span-full rounded border bg-neutral-100 p-4 shadow-sm dark:border-neutral-800 dark:bg-darkModeContrast">
           <div className="flex items-center text-xs">
             <span className="mr-1 font-bold text-green-500">
               Data/Hora do rastreador:

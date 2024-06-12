@@ -5,9 +5,10 @@ export const FieldsetHeader = () => {
   return (
     <fieldset className="flex h-full items-start gap-4">
       <Card.Root>
+        <Card.Section title="Nº do Pedido" value="#2323" />
+        <Card.Separator />
         <Card.ProfileImage />
         <Card.Section title="Vendedor" value="Gabriel Pedroso" />
-        <Card.Section title="Nº do Pedido" value="#2323" />
       </Card.Root>
 
       <div className="mt-1 h-24 w-px bg-zinc-100 dark:bg-borderDarkMode" />

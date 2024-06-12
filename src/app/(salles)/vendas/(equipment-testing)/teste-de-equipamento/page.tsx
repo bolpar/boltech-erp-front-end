@@ -68,7 +68,8 @@ export default function EquipmentTesting() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          />
+
           <div className="mt-2 flex items-center gap-2">
             <Button icon={SquareChevronRightIcon}>Comandos</Button>
             <Button icon={HistoryIcon}>Histórico</Button>

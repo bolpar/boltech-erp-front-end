@@ -12,16 +12,16 @@ export const ImagePreview = () => {
       />
 
       <div className="grid h-fit items-center gap-2">
-        <button className="rounded-md bg-green-400 p-4 text-white hover:bg-green-500 dark:text-zinc-700">
+        <button className="rounded-md bg-blue-400 p-4 text-white hover:bg-blue-500 dark:text-zinc-700">
           <PrinterIcon />
         </button>
-        <button className="rounded-md bg-green-400 p-4 text-white hover:bg-green-500 dark:text-zinc-700">
+        <button className="rounded-md bg-blue-400 p-4 text-white hover:bg-blue-500 dark:text-zinc-700">
           <SaveIcon />
         </button>
-        <button className="rounded-md bg-green-400 p-4 text-white hover:bg-green-500 dark:text-zinc-700">
+        <button className="rounded-md bg-blue-400 p-4 text-white hover:bg-blue-500 dark:text-zinc-700">
           <PrinterIcon />
         </button>
-        <button className="rounded-md bg-green-400 p-4 text-white hover:bg-green-500 dark:text-zinc-700">
+        <button className="rounded-md bg-blue-400 p-4 text-white hover:bg-blue-500 dark:text-zinc-700">
           <SaveIcon />
         </button>
       </div>

@@ -1,7 +1,8 @@
-export default async function Home() {
-  return (
-    <>
-      <h1>Olá, mundo.</h1>
-    </>
-  )
+'use client'
+
+import { useRouter } from 'next/navigation'
+
+export default function Home() {
+  const router = useRouter()
+  return router.push('/vendas/dados')
 }

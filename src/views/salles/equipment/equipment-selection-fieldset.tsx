@@ -67,7 +67,7 @@ export const EquipmentSelectionFieldset = () => {
         </div>
       </div>
 
-      <div className="col-span-1 row-span-5 flex flex-col items-start gap-4 rounded border border-neutral-300 p-6 dark:border-green-500 dark:bg-darkModeContrast">
+      <div className="dark:neutral-800 col-span-1 row-span-5 flex flex-col items-start gap-4 rounded border p-6 shadow-sm dark:border-neutral-800 dark:bg-darkModeContrast">
         <span className="text-xs font-semibold text-zinc-700 dark:text-white">
           Checklist saída de rastreador
         </span>

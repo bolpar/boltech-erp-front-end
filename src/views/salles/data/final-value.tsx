@@ -7,7 +7,7 @@ export const FinalValue = () => {
         Confira a baixo o valor resultante
       </span>
 
-      <div className="mt-2 flex w-fit items-center justify-center gap-6 rounded-lg border-b-4 border-green-700 bg-green-400 p-4">
+      <div className="mt-2 flex w-fit items-center justify-center gap-6 rounded-xl border-b-4 border-green-700 bg-green-200 bg-gradient-to-br from-green-500 to-green-300 p-4 dark:bg-gradient-to-tr dark:from-green-300 dark:to-green-500">
         <div className="rounded-full bg-white p-2 dark:bg-zinc-700">
           <CircleDollarSignIcon className="h-10 w-10 text-green-500" />
         </div>

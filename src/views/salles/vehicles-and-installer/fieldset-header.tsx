@@ -6,6 +6,7 @@ export const FieldsetHeader = () => {
       <fieldset className="flex h-full items-start gap-4">
         <Card.Root>
           <Card.Section title="Tipo do Aparelho" value="Valor do aparelho" />
+          <Card.Separator />
           <Card.Section title="Quantidade" value="1/1" />
         </Card.Root>
       </fieldset>
