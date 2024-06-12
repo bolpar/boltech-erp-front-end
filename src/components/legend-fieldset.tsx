@@ -7,7 +7,7 @@ interface TitleFieldsetProps extends ComponentProps<'legend'> {
 
 export const LegendFieldset = ({ children, className }: TitleFieldsetProps) => {
   return (
-    <legend className="w-full">
+    <legend className="col-span-full w-full">
       <div
         className={twMerge(
           'col-span-full my-10 flex w-full items-center justify-center text-sm font-bold text-zinc-600',

@@ -49,7 +49,7 @@ export const ReceiptOfOrderFieldset = () => {
 
           <TextArea
             label="Observações Adicionais"
-            className="col-span-full row-span-4"
+            className="col-span-full row-span-2"
           />
         </div>
 
