@@ -1,9 +1,13 @@
 import * as Table from '@/components/table/index'
+import { getClients } from '@/services/query/getClients'
+import { formatDate } from '@/utils/formatDate'
 import { ComponentProps } from 'react'
 
 interface ClientsListProps extends ComponentProps<'div'> {}
 
-export const ClientsList = ({ className }: ClientsListProps) => {
+export const ClientsList = async ({ className }: ClientsListProps) => {
+  const clients = await getClients()
+
   return (
     <div className={className}>
       <Table.Root>
@@ -12,40 +16,30 @@ export const ClientsList = ({ className }: ClientsListProps) => {
           <Table.HeadItem>CPF/CNPJ</Table.HeadItem>
           <Table.HeadItem>Telefone</Table.HeadItem>
           <Table.HeadItem>Email</Table.HeadItem>
+          <Table.HeadItem>Criado em</Table.HeadItem>
         </Table.Head>
 
         <Table.Body>
-          <Table.Row>
-            <Table.BodyItem>Gabriel Pedroso</Table.BodyItem>
-            <Table.BodyItem>999.999999-99</Table.BodyItem>
-            <Table.BodyItem>41 9 8403-0800</Table.BodyItem>
-            <Table.BodyItem>gabrielpedroso@email.com</Table.BodyItem>
-          </Table.Row>
+          {clients.map((client, index) => {
+            const isAlternative = index % 2 === 0
+            const date = formatDate(client.created_at)
 
-          <Table.Row>
-            <Table.BodyItem alternative>Gabriel Pedroso</Table.BodyItem>
-            <Table.BodyItem alternative>999.999999-99</Table.BodyItem>
-            <Table.BodyItem alternative>41 9 8403-0800</Table.BodyItem>
-            <Table.BodyItem alternative>
-              gabrielpedroso@email.com
-            </Table.BodyItem>
-          </Table.Row>
-
-          <Table.Row>
-            <Table.BodyItem>Gabriel Pedroso</Table.BodyItem>
-            <Table.BodyItem>999.999999-99</Table.BodyItem>
-            <Table.BodyItem>41 9 8403-0800</Table.BodyItem>
-            <Table.BodyItem>gabrielpedroso@email.com</Table.BodyItem>
-          </Table.Row>
-
-          <Table.Row>
-            <Table.BodyItem alternative>Gabriel Pedroso</Table.BodyItem>
-            <Table.BodyItem alternative>999.999999-99</Table.BodyItem>
-            <Table.BodyItem alternative>41 9 8403-0800</Table.BodyItem>
-            <Table.BodyItem alternative>
-              gabrielpedroso@email.com
-            </Table.BodyItem>
-          </Table.Row>
+            return (
+              <Table.Row key={index}>
+                <Table.BodyItem alternative={isAlternative}>
+                  {client.nome}
+                </Table.BodyItem>
+                <Table.BodyItem alternative={isAlternative}>
+                  {client.documento}
+                </Table.BodyItem>
+                <Table.BodyItem alternative={isAlternative}>-</Table.BodyItem>
+                <Table.BodyItem alternative={isAlternative}>-</Table.BodyItem>
+                <Table.BodyItem alternative={isAlternative}>
+                  {date}
+                </Table.BodyItem>
+              </Table.Row>
+            )
+          })}
         </Table.Body>
       </Table.Root>
     </div>

@@ -7,25 +7,25 @@ import { BasicInfoFieldset } from '@/views/salles/data/basic-info-fieldset'
 import { FieldsetHeader } from '@/views/salles/data/fieldset-header'
 import { FinalValue } from '@/views/salles/data/final-value'
 import { PlansAndPaymentFieldset } from '@/views/salles/data/plans-and-payment-fieldset'
-// import { zodResolver } from '@hookform/resolvers/zod'
-// import { useForm } from 'react-hook-form'
-// import { BasicInfoForm, basicInfoFormSchema } from './data-form-schema'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { DataFromSallesForm, dataFormSchema } from './data-form-schema'
 
 export const DataForm = () => {
-  // const { register, handleSubmit } = useForm<BasicInfoForm>({
-  //   resolver: zodResolver(basicInfoFormSchema),
-  // })
+  const { register, handleSubmit } = useForm<DataFromSallesForm>({
+    resolver: zodResolver(dataFormSchema),
+  })
 
-  // async function onSubmit() {
-  //   // Chama a mutation aqui...
-  // }
+  async function onSubmit() {
+    // Chama a mutation aqui...
+  }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <FieldsetHeader />
-      <BasicInfoFieldset />
-      <AddressFieldset />
-      <PlansAndPaymentFieldset />
+      <BasicInfoFieldset register={register} />
+      <AddressFieldset register={register} />
+      <PlansAndPaymentFieldset register={register} />
       <Separator />
       <FinalValue />
       <Separator />

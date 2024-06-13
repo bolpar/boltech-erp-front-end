@@ -1,51 +1,81 @@
 import { gql, GraphQLClient } from 'graphql-request'
 
+type DocumentType = 'CPF' | 'CNPJ'
+type ContactType = 'Email' | 'Telefone' | 'Celular'
+type AddressType = 'Casa' | 'Trabalho' | 'Agendamento' | 'Outros'
+
 interface CreateBasicInfoRequest {
   input: {
     pedidoVenda: {
-      modalodeContrato: {
-        connect: {
-          id: string
+      acrescimo?: number
+
+      contatos: {
+        create: {
+          padrao?: boolean
+          tipo: ContactType
+          valor: string
         }
       }
-      valor: {
-        connect: {
-          id: string
+
+      desconto?: number
+
+      endereco: {
+        create: {
+          bairro?: string
+          cep: string
+          cidade?: string
+          complemento?: string
+          estado?: string
+          lat?: number
+          lng?: number
+          numero: string
+          rua?: string
+          tipo?: AddressType
         }
       }
+
+      equipamentoPedido: {
+        equipamentoTipo: {
+          connect: {
+            id: string
+          }
+          observacao?: string
+          quantidade: number
+        }
+      }
+
       formaPagamento: {
         connect: {
           id: string
         }
       }
+
       lead: {
         upsert: {
+          data_nascimento?: string
+          documento?: string
+          documento_tipo?: DocumentType
+          id?: string
+          is_cliente?: boolean
           nome: string
-          data_nascimento: string
-          documento: string
-          // documento_tipo: CPF
-          is_cliente: boolean
-          observacao: string
-          publicidade: string
+          observacao?: string
+          publicidade?: string
         }
       }
-      equipamentoPedido: {
-        equipamentotipo: {
-          connect: { id: string }
-          quantidade: number
-          observacao: string
+
+      modeloDeContrato: {
+        connect: {
+          id: string
         }
       }
-      contatos: { create: { valor: string; padrao: boolean } }
-      endereco: {
-        create: {
-          numero: string
-          cep: string
+
+      parcelas?: number
+
+      valor: {
+        connect: {
+          id: string
         }
       }
-      acrescimo: number
-      desconto: number
-      parcelas: number
     }
   }
 }

@@ -2,9 +2,17 @@ import * as InputText from '@/components/UI/input-text'
 import * as Select from '@/components/UI/select'
 import { TextArea } from '@/components/UI/textarea'
 import { LegendFieldset } from '@/components/legend-fieldset'
+import { UseFormRegister } from 'react-hook-form'
+import { DataFromSallesForm } from '../@form/data-form-schema'
 import { PlansModal } from './plans-modal'
 
-export const PlansAndPaymentFieldset = () => {
+interface PlansAndPaymentFieldsetProps {
+  register: UseFormRegister<DataFromSallesForm>
+}
+
+export const PlansAndPaymentFieldset = ({
+  register,
+}: PlansAndPaymentFieldsetProps) => {
   return (
     <fieldset className="grid grid-cols-3 gap-4">
       <LegendFieldset>PLANOS E PAGAMENTO</LegendFieldset>

@@ -5,6 +5,7 @@ const API = process.env.NEXT_PUBLIC_API as string
 interface GetClientsResponse {
   clientes: {
     data: {
+      nome: string
       documento: string
       created_at: string
     }[]
@@ -14,8 +15,9 @@ interface GetClientsResponse {
 export async function getClients() {
   const query = gql`
     query {
-      clientes(first: 10) {
+      clientes(first: 20, page: 1) {
         data {
+          nome
           documento
           created_at
         }

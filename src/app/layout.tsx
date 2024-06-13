@@ -1,4 +1,5 @@
 import { SideBar } from '@/components/side-bar'
+import ReactQueryClientProvider from '@/config/queryClientProvider'
 import { ThemeProvider } from 'next-themes'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -13,13 +14,15 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning className="antialiased">
       <body className={inter.className}>
-        <div className="grid min-h-screen grid-cols-app dark:bg-darkMode">
-          <SideBar />
+        <ReactQueryClientProvider>
+          <div className="grid min-h-screen grid-cols-app dark:bg-darkMode">
+            <SideBar />
 
-          <main className="bg-white px-4 pb-12 dark:bg-darkMode lg:col-start-2 lg:px-8">
-            <ThemeProvider attribute="class">{children}</ThemeProvider>
-          </main>
-        </div>
+            <main className="bg-white px-4 pb-12 dark:bg-darkMode lg:col-start-2 lg:px-8">
+              <ThemeProvider attribute="class">{children}</ThemeProvider>
+            </main>
+          </div>
+        </ReactQueryClientProvider>
       </body>
     </html>
   )
