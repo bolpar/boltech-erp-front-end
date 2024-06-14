@@ -7,7 +7,12 @@ interface HeadProps extends ComponentProps<'thead'> {
 
 export const Head = ({ children, className }: HeadProps) => {
   return (
-    <thead className={twMerge('bg-green-400 dark:bg-green-500', className)}>
+    <thead
+      className={twMerge(
+        'bg-gradient-to-tl from-green-300 to-green-500',
+        className,
+      )}
+    >
       <tr>{children}</tr>
     </thead>
   )

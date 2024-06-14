@@ -2,6 +2,7 @@
 
 import { Actions } from '@/components/actions'
 import { Separator } from '@/components/separator'
+import { createBasicInfoClient } from '@/services/mutations/create-basic-info-client'
 import { AddressFieldset } from '@/views/salles/data/address-fieldset'
 import { BasicInfoFieldset } from '@/views/salles/data/basic-info-fieldset'
 import { FieldsetHeader } from '@/views/salles/data/fieldset-header'
@@ -16,13 +17,30 @@ export const DataForm = () => {
     resolver: zodResolver(dataFormSchema),
   })
 
-  async function onSubmit() {
-    // Chama a mutation aqui...
+  async function onSubmitData(data: DataFromSallesForm) {
+    console.log('Chamou!')
+
+    // const response = await createBasicInfo({
+    //   input: {
+    //     pedidoVenda: data.input.pedidoVenda,
+    //   },
+    // })
+
+    const response = createBasicInfoClient({
+      input: {
+        pedidoVenda: data.input.pedidoVenda,
+      },
+    })
+
+    console.log(response)
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmitData)}>
       <FieldsetHeader />
+      {/* <Button icon={SendIcon} type="submit">
+        Enviar
+      </Button> */}
       <BasicInfoFieldset register={register} />
       <AddressFieldset register={register} />
       <PlansAndPaymentFieldset register={register} />

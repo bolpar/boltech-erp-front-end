@@ -7,10 +7,14 @@ import {
   PencilIcon,
   SaveIcon,
 } from 'lucide-react'
+import { ComponentProps } from 'react'
+import { twMerge } from 'tailwind-merge'
 
-export const Actions = () => {
+type ActionsProps = ComponentProps<'footer'>
+
+export const Actions = ({ className }: ActionsProps) => {
   return (
-    <footer className="flex items-center justify-between">
+    <footer className={twMerge('flex items-center justify-between', className)}>
       <div className="flex items-center gap-3">
         <Button variant="edit" icon={PencilIcon}>
           Editar

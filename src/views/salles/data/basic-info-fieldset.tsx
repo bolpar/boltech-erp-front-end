@@ -21,7 +21,7 @@ export const BasicInfoFieldset = ({ register }: BasicInfoFieldsetProps) => {
       <InputText.Root label="CPF/CNPJ" optional>
         <InputText.Input
           placeHolder="Digite aqui seu CPF/CNPJ..."
-          {...register('input.pedidoVenda.lead.upsert.nome')}
+          {...register('input.pedidoVenda.lead.upsert.documento')}
         />
       </InputText.Root>
       <InputText.Root label="Data de Nascimento" optional>
@@ -30,7 +30,7 @@ export const BasicInfoFieldset = ({ register }: BasicInfoFieldsetProps) => {
           {...register('input.pedidoVenda.lead.upsert.data_nascimento')}
         />
       </InputText.Root>
-      <InputText.Root label="E-mail">
+      <InputText.Root label="E-mail" optional>
         <InputText.Input
           placeHolder="Digite aqui seu endereço de e-mail..."
           {...register('input.pedidoVenda.contatos.create.valor')}
