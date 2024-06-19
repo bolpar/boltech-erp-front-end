@@ -6,13 +6,13 @@ export const ClientAddressFieldset = () => {
     <>
       <LegendFieldset>ENDEREÇO DO CLIENTE</LegendFieldset>
 
-      <InputText.Root label="CEP">
+      {/* <InputText.Root label="CEP">
         <InputText.Input
           disabled
           value="99.999.999.99"
           placeHolder="Digite seu CEP..."
         />
-      </InputText.Root>
+      </InputText.Root> */}
 
       <InputText.Root label="Endereço">
         <InputText.Input

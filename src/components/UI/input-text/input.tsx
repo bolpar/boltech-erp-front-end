@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge'
 interface InputProps extends ComponentProps<'input'> {
   placeHolder: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  register: any
+  register?: any
   children?: ReactNode
 }
 
