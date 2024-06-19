@@ -59,13 +59,14 @@ export const PlansAndPaymentFieldset = ({
             // pattern="[0-9]*"
             onKeyPress={(event) => {
               if (!/[0-9]/.test(event.key)) {
-                event.preventDefault();
+                event.preventDefault()
               }
             }}
           />
           <InputText.Error>
             {
-              errors?.input?.pedidoVenda?.equipamentoPedido?.quantidade?.message as string
+              errors?.input?.pedidoVenda?.equipamentoPedido?.quantidade
+                ?.message as string
             }
           </InputText.Error>
         </InputText.Root>
@@ -108,7 +109,7 @@ export const PlansAndPaymentFieldset = ({
               type="number"
               onKeyPress={(event) => {
                 if (!/[0-9]/.test(event.key)) {
-                  event.preventDefault();
+                  event.preventDefault()
                 }
               }}
               placeHolder="Digite o o desconto..."
@@ -124,7 +125,7 @@ export const PlansAndPaymentFieldset = ({
               min={1}
               onKeyPress={(event) => {
                 if (!/[0-9]/.test(event.key)) {
-                  event.preventDefault();
+                  event.preventDefault()
                 }
               }}
               placeHolder="Digite o acrescimo..."

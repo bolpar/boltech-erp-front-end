@@ -73,7 +73,7 @@ export const DataForm = () => {
               observacao: 'teste',
               publicidade: 'teste',
             },
-          }
+          },
         },
       },
     },
@@ -89,7 +89,6 @@ export const DataForm = () => {
       console.log(error)
     }
   }
-  
 
   useEffect(() => {
     console.log(errors)

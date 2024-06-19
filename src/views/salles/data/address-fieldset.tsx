@@ -28,7 +28,7 @@ export const AddressFieldset = ({ register, errors }: AddressFieldsetProps) => {
             }
           </InputText.Error>
         </InputText.Root>
-        <InputText.Root label="Endereço" >
+        <InputText.Root label="Endereço">
           <InputText.Input
             placeHolder="Digite aqui seu endereço..."
             register={register('input.pedidoVenda.endereco.create.rua')}
@@ -60,13 +60,13 @@ export const AddressFieldset = ({ register, errors }: AddressFieldsetProps) => {
       </div>
 
       <div className="col-span-3 grid grid-cols-3 gap-4">
-        <InputText.Root label="Bairro" >
+        <InputText.Root label="Bairro">
           <InputText.Input
             placeHolder="Digite aqui seu bairro..."
             register={register('input.pedidoVenda.endereco.create.bairro')}
           />
         </InputText.Root>
-        <InputText.Root label="Cidade" >
+        <InputText.Root label="Cidade">
           <InputText.Input
             placeHolder="Digite aqui sua cidade..."
             register={register('input.pedidoVenda.endereco.create.cidade')}
@@ -76,7 +76,7 @@ export const AddressFieldset = ({ register, errors }: AddressFieldsetProps) => {
           <InputText.Input
             min={2}
             max={2}
-            type='text'
+            type="text"
             placeHolder="Digite aqui o UF..."
             register={register('input.pedidoVenda.endereco.create.estado')}
           />

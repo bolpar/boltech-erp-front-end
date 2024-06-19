@@ -11,8 +11,8 @@ export const dataFormSchema = z.object({
             padrao: z.boolean().optional(),
             tipo: z.enum(['Email', 'Telefone', 'Celular']),
             valor: z
-             .string()
-             .min(1, { message: 'Por favor, digite um valor.' }),
+              .string()
+              .min(1, { message: 'Por favor, digite um valor.' }),
           }),
         ),
       }),
@@ -20,24 +20,29 @@ export const dataFormSchema = z.object({
       desconto: z.string().optional().transform(Number),
 
       endereco: z.object({
-        create: z.object({
-          bairro: z.string().optional(),
-          cep: z
-            .string()
-            .min(1, { message: 'Por favor, digite um CEP valido.' }),
-          cidade: z.string().optional(),
-          complemento: z.string().optional().refine((complemento) => complemento !== ''),
-          estado: z.string().optional(),
-          lat: z.number().optional(),
-          lng: z.number().optional(),
-          numero: z
-            .string()
-            .min(1, { message: 'Por favor, digite o número do endereço.' }),
-          rua: z.string().optional(),
-          tipo: z
-            .enum(['Casa', 'Trabalho', 'Agendamento', 'Outros'])
-            .optional(),
-        }).optional(),
+        create: z
+          .object({
+            bairro: z.string().optional(),
+            cep: z
+              .string()
+              .min(1, { message: 'Por favor, digite um CEP valido.' }),
+            cidade: z.string().optional(),
+            complemento: z
+              .string()
+              .optional()
+              .refine((complemento) => complemento !== ''),
+            estado: z.string().optional(),
+            lat: z.number().optional(),
+            lng: z.number().optional(),
+            numero: z
+              .string()
+              .min(1, { message: 'Por favor, digite o número do endereço.' }),
+            rua: z.string().optional(),
+            tipo: z
+              .enum(['Casa', 'Trabalho', 'Agendamento', 'Outros'])
+              .optional(),
+          })
+          .optional(),
       }),
 
       equipamentoPedido: z.object({
@@ -49,9 +54,12 @@ export const dataFormSchema = z.object({
           }),
         }),
         observacao: z.string().optional(),
-        quantidade: z.string().min(1, {
-          message: 'Por favor, digite a quantidade',
-        }).transform(Number),
+        quantidade: z
+          .string()
+          .min(1, {
+            message: 'Por favor, digite a quantidade',
+          })
+          .transform(Number),
       }),
 
       formaPagamento: z.object({

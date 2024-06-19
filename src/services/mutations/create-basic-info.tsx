@@ -215,17 +215,17 @@ export async function createBasicInfo({ input }: DataFromSallesForm) {
   const mutation = gql`
     mutation MyMutation($input: SalvarDadosVendaEtapa1Input!) {
       salvarDadosVendaEtapa1(input: $input) {
-          id
-        }
+        id
       }
-    `
+    }
+  `
 
   const variables = { input }
 
   try {
     const response = await graphQLClient.request(mutation, variables)
-    console.log('Dados enviados com sucesso: ', response);
-    return response;
+    console.log('Dados enviados com sucesso: ', response)
+    return response
   } catch (error) {
     console.log(error)
     console.error('Erro na requisição GraphQL: ', error)
