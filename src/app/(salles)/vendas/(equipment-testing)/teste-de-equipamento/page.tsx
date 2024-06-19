@@ -1,6 +1,5 @@
 import { Button } from '@/components/UI/button'
 import { ChooseFileInput } from '@/components/UI/choose-file-input'
-import * as InputText from '@/components/UI/input-text'
 import * as Select from '@/components/UI/select'
 import { Actions } from '@/components/actions'
 import { Separator } from '@/components/separator'
@@ -11,12 +10,12 @@ export default function EquipmentTesting() {
     <form>
       <div className="grid grid-cols-4 grid-rows-6 gap-4">
         <div className="col-span-2 row-span-5 grid grid-cols-2 gap-4">
-          <InputText.Root label="IMEI">
-            <InputText.Input placeHolder="Digite o seu IMEI..." />
-          </InputText.Root>
-          <InputText.Root label="Placa">
+          {/* <InputText.Root label="IMEI">
+            <InputText.Input register={register={''}} placeHolder="Digite o seu IMEI..." />
+          </InputText.Root> */}
+          {/* <InputText.Root label="Placa">
             <InputText.Input placeHolder="Digite a placa do veículo..." />
-          </InputText.Root>
+          </InputText.Root> */}
           <Select.Root>
             <Select.Trigger
               label="Com Bloqueio"
