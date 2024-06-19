@@ -8,8 +8,9 @@ export const VehicleFieldset = () => {
 
       <div className="col-span-full grid grid-cols-3 gap-4">
         <InputText.Root label="Placa">
-          <InputText.Input placeHolder="Digite a sua placa..." />
-          <InputText.SearchButton />
+          <InputText.Input placeHolder="Digite a sua placa...">
+            <InputText.SearchButton />
+          </InputText.Input>
         </InputText.Root>
         <InputText.Root label="Ano">
           <InputText.Input placeHolder="Digite o ano..." />

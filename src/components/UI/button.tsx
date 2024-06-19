@@ -1,4 +1,4 @@
-import { ComponentProps, ElementType, ReactNode } from 'react'
+import { ComponentProps, ElementType, ReactNode, forwardRef } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 
 const button = tv({
@@ -27,17 +27,15 @@ interface ButtonProps
   children: ReactNode
 }
 
-export const Button = ({
-  icon: Icon,
-  children,
-  variant,
-  className,
-  ...props
-}: ButtonProps) => {
-  return (
-    <button {...props} className={button({ variant, className })}>
-      <Icon className="h-4 w-4 text-white dark:text-zinc-900" />
-      {children}
-    </button>
-  )
-}
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ icon: Icon, children, variant, className, ...props }, ref) => {
+    return (
+      <button {...props} ref={ref} className={button({ variant, className })}>
+        <Icon className="h-4 w-4 text-white dark:text-zinc-900" />
+        {children}
+      </button>
+    )
+  },
+)
+
+Button.displayName = 'Button'

@@ -63,10 +63,11 @@ export const ReceiptOfOrderFieldset = () => {
               value={1200}
               readOnly
               disabled
-            />
-            <InputText.ModalButton>
-              <PixModalContent />
-            </InputText.ModalButton>
+            >
+              <InputText.ModalButton>
+                <PixModalContent />
+              </InputText.ModalButton>
+            </InputText.Input>
           </InputText.Root>
           <InputText.Root label="Cartão">
             <InputText.Input
@@ -74,10 +75,11 @@ export const ReceiptOfOrderFieldset = () => {
               value={1200}
               readOnly
               disabled
-            />
-            <InputText.ModalButton>
-              <CardReceiptModalContent />
-            </InputText.ModalButton>
+            >
+              <InputText.ModalButton>
+                <CardReceiptModalContent />
+              </InputText.ModalButton>
+            </InputText.Input>
           </InputText.Root>
           <InputText.Root label="Boleto">
             <InputText.Input
@@ -85,10 +87,11 @@ export const ReceiptOfOrderFieldset = () => {
               value={1200}
               readOnly
               disabled
-            />
-            <InputText.ModalButton>
-              <ReleaseOfTicketsModalContent />
-            </InputText.ModalButton>
+            >
+              <InputText.ModalButton>
+                <ReleaseOfTicketsModalContent />
+              </InputText.ModalButton>
+            </InputText.Input>
           </InputText.Root>
           <InputText.Root label="Crédito">
             <InputText.Input
@@ -96,11 +99,12 @@ export const ReceiptOfOrderFieldset = () => {
               value={1200}
               readOnly
               disabled
-            />
-            <InputText.ModalButton>
-              {/* <PixModalContent /> */}
-              <div />
-            </InputText.ModalButton>
+            >
+              <InputText.ModalButton>
+                {/* <PixModalContent /> */}
+                <div />
+              </InputText.ModalButton>
+            </InputText.Input>
           </InputText.Root>
           <InputText.Root label="Desconto">
             <InputText.Input placeHolder="Digite o valor..." />

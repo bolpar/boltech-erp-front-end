@@ -6,13 +6,15 @@ export const FieldsetHeader = () => {
     <fieldset className="grid grid-cols-2 gap-4">
       <div className="col-span-full grid grid-cols-3">
         <InputText.Root label="Número do Pedido">
-          <InputText.Input placeHolder="Digite o número do pedido..." />
-          <InputText.SearchButton />
+          <InputText.Input placeHolder="Digite o número do pedido...">
+            <InputText.SearchButton />
+          </InputText.Input>
         </InputText.Root>
       </div>
 
       <Card.Root>
         <Card.ProfileImage />
+        <Card.Separator />
         <Card.Section title="Vendedor" value="Gabriel Pedroso" />
       </Card.Root>
     </fieldset>

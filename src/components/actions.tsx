@@ -28,7 +28,7 @@ export const Actions = ({ className }: ActionsProps) => {
         <Button variant="error" icon={CircleXIcon}>
           Cancelar
         </Button>
-        <Button variant="success" icon={CircleCheckIcon}>
+        <Button type="submit" variant="success" icon={CircleCheckIcon}>
           Avançar
         </Button>
       </div>

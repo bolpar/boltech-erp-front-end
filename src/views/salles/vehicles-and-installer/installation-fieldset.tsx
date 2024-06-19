@@ -11,8 +11,9 @@ export const InstallationFieldset = () => {
       <LegendFieldset>INSTALAÇÃO</LegendFieldset>
 
       <InputText.Root label="Técnico">
-        <InputText.Input placeHolder="Digite aqui o técnico..." />
-        <InputText.SearchButton />
+        <InputText.Input placeHolder="Digite aqui o técnico...">
+          <InputText.SearchButton />
+        </InputText.Input>
       </InputText.Root>
       <InputText.Root label="Valor de Instalação">
         <InputText.Input placeHolder="Digite aqui o valor de instalação..." />
