@@ -2,12 +2,12 @@ import { ComponentProps, ReactNode } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 interface RootProps extends ComponentProps<'label'> {
-  label?: string
   children: ReactNode
+  label?: string
   optional?: boolean
 }
 
-export const Root = ({ label, children, optional, className }: RootProps) => {
+export const Root = ({ children, label, optional, className }: RootProps) => {
   return (
     <label
       className={twMerge(

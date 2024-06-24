@@ -1,4 +1,4 @@
-import * as InputText from '@/components/UI/input-text/index'
+import * as InputText from '@/components/UI/input/index'
 import { UseFormRegister } from 'react-hook-form'
 import { TestData } from './page'
 
@@ -9,10 +9,7 @@ interface AgeInputProps {
 export const AgeInput = ({ register }: AgeInputProps) => {
   return (
     <InputText.Root label="Idade">
-      <InputText.Input
-        placeHolder="Digite a idade"
-        register={register('age')}
-      />
+      <InputText.Input placeHolder="Digite a idade" name={register('age')} />
     </InputText.Root>
   )
 }

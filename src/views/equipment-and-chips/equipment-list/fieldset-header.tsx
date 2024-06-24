@@ -1,4 +1,4 @@
-import * as InputText from '@/components/UI/input-text'
+import * as InputText from '@/components/UI/input'
 import * as Select from '@/components/UI/select'
 
 export const FieldsetHeader = () => {

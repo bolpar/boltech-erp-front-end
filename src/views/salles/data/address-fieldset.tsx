@@ -1,86 +1,89 @@
-import * as InputText from '@/components/UI/input-text'
+import * as InputField from '@/components/UI/input'
 import { LegendFieldset } from '@/components/legend-fieldset'
-import { FieldErrors, UseFormRegister } from 'react-hook-form'
+import { useFormContext } from 'react-hook-form'
 import { DataFromSallesForm } from '../@form/data-form-schema'
 
-interface AddressFieldsetProps {
-  register: UseFormRegister<DataFromSallesForm>
-  errors: FieldErrors<DataFromSallesForm>
-}
+export const AddressFieldset = () => {
+  const {
+    formState: { errors },
+  } = useFormContext<DataFromSallesForm>()
+  const errorMessage = errors.input?.pedidoVenda
 
-export const AddressFieldset = ({ register, errors }: AddressFieldsetProps) => {
   return (
     <fieldset className="grid grid-cols-3 gap-4">
       <LegendFieldset>ENDEREÇO</LegendFieldset>
 
       <div className="col-span-3 grid grid-cols-3 gap-4">
-        <InputText.Root label="CEP">
-          <InputText.Input
+        <InputField.Root label="CEP">
+          <InputField.Text
+            fieldName="input.pedidoVenda.endereco.create.cep"
+            min={8}
+            max={8}
             placeHolder="Digite aqui seu CEP..."
-            register={register('input.pedidoVenda.endereco.create.cep')}
+            className="col-span-full"
           >
-            <InputText.SearchButton />
-          </InputText.Input>
-          <InputText.Error>
-            {
-              errors?.input?.pedidoVenda?.endereco?.create?.cep
-                ?.message as string
-            }
-          </InputText.Error>
-        </InputText.Root>
-        <InputText.Root label="Endereço">
-          <InputText.Input
-            placeHolder="Digite aqui seu endereço..."
-            register={register('input.pedidoVenda.endereco.create.rua')}
-          />
-        </InputText.Root>
+            <InputField.SearchButton />
+          </InputField.Text>
+          <InputField.Error>
+            {errorMessage?.endereco?.create?.cep?.message as string}
+          </InputField.Error>
+        </InputField.Root>
 
-        <div className="col-span-1 flex items-center gap-4">
-          <InputText.Root label="Número">
-            <InputText.Input
+        <div className="col-span-3 grid grid-cols-3 gap-4">
+          <InputField.Root label="Endereço" optional>
+            <InputField.Text
+              fieldName="input.pedidoVenda.endereco.create.rua"
+              max={255}
+              placeHolder="Digite aqui seu endereço..."
+            />
+          </InputField.Root>
+
+          <InputField.Root label="Número">
+            <InputField.Text
+              fieldName="input.pedidoVenda.endereco.create.numero"
+              max={20}
               placeHolder="Digite aqui seu número..."
-              register={register('input.pedidoVenda.endereco.create.numero')}
             />
-            <InputText.Error>
-              {
-                errors.input?.pedidoVenda?.endereco?.create?.numero
-                  ?.message as string
-              }
-            </InputText.Error>
-          </InputText.Root>
-          {/* <InputText.Root label="Complemento" >
-            <InputText.Input
+            <InputField.Error>
+              {errorMessage?.endereco?.create?.numero?.message as string}
+            </InputField.Error>
+          </InputField.Root>
+
+          <InputField.Root label="Complemento" optional>
+            <InputField.Text
+              fieldName="input.pedidoVenda.endereco.create.complemento"
+              max={255}
               placeHolder="Digite aqui seu complemento..."
-              register={register(
-                'input.pedidoVenda.endereco.create.complemento',
-              )}
             />
-          </InputText.Root> */}
+          </InputField.Root>
         </div>
       </div>
 
       <div className="col-span-3 grid grid-cols-3 gap-4">
-        <InputText.Root label="Bairro">
-          <InputText.Input
+        <InputField.Root label="Bairro" optional>
+          <InputField.Text
+            fieldName="input.pedidoVenda.endereco.create.bairro"
+            max={30}
             placeHolder="Digite aqui seu bairro..."
-            register={register('input.pedidoVenda.endereco.create.bairro')}
           />
-        </InputText.Root>
-        <InputText.Root label="Cidade">
-          <InputText.Input
+        </InputField.Root>
+
+        <InputField.Root label="Cidade" optional>
+          <InputField.Text
+            fieldName="input.pedidoVenda.endereco.create.cidade"
+            max={30}
             placeHolder="Digite aqui sua cidade..."
-            register={register('input.pedidoVenda.endereco.create.cidade')}
           />
-        </InputText.Root>
-        <InputText.Root label="UF">
-          <InputText.Input
+        </InputField.Root>
+
+        <InputField.Root label="UF" optional>
+          <InputField.Text
+            fieldName="input.pedidoVenda.endereco.create.estado"
             min={2}
             max={2}
-            type="text"
             placeHolder="Digite aqui o UF..."
-            register={register('input.pedidoVenda.endereco.create.estado')}
           />
-        </InputText.Root>
+        </InputField.Root>
       </div>
     </fieldset>
   )

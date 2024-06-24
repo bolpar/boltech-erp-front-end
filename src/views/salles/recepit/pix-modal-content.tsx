@@ -1,7 +1,7 @@
 import * as Card from '@/components/card'
 import { Separator } from '@/components/separator'
 import { Button } from '@/components/UI/button'
-import * as InputText from '@/components/UI/input-text'
+import * as InputText from '@/components/UI/input'
 import * as Select from '@/components/UI/select'
 import { TextArea } from '@/components/UI/textarea'
 import { CheckIcon, XIcon } from 'lucide-react'

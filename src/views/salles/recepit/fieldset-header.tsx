@@ -1,4 +1,4 @@
-import * as InputText from '@/components/UI/input-text'
+import * as InputText from '@/components/UI/input'
 import * as Card from '@/components/card'
 
 export const FieldsetHeader = () => {

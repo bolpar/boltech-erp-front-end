@@ -1,4 +1,4 @@
-import * as InputText from '@/components/UI/input-text'
+import * as InputText from '@/components/UI/input'
 import * as Select from '@/components/UI/select'
 import { TextArea } from '@/components/UI/textarea'
 import { Actions } from '@/components/actions'

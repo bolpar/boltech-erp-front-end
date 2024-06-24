@@ -1,5 +1,5 @@
 import { LegendFieldset } from '@/components/legend-fieldset'
-import * as InputText from '@/components/UI/input-text'
+import * as InputText from '@/components/UI/input'
 
 export const ClientInfoFieldset = () => {
   return (

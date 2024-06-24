@@ -1,6 +1,6 @@
 import { Button } from '@/components/UI/button'
 import { Checkbox } from '@/components/UI/checkbox'
-import * as InputText from '@/components/UI/input-text'
+import * as InputText from '@/components/UI/input'
 import * as Select from '@/components/UI/select'
 import { LegendFieldset } from '@/components/legend-fieldset'
 import { CheckIcon } from 'lucide-react'

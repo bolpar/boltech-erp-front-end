@@ -5,25 +5,21 @@ import { Separator } from '@/components/separator'
 import { createBasicInfo } from '@/services/mutations/create-basic-info'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useEffect } from 'react'
-import { useForm } from 'react-hook-form'
+import { FormProvider, useForm } from 'react-hook-form'
 import { AddressFieldset } from '../data/address-fieldset'
 import { BasicInfoFieldset } from '../data/basic-info-fieldset'
+import { EquipmentFieldset } from '../data/equipment-fieldset'
 import { FieldsetHeader } from '../data/fieldset-header'
-import { FinalValue } from '../data/final-value'
-import { PlansAndPaymentFieldset } from '../data/plans-and-payment-fieldset'
+import { PaymentFieldset } from '../data/payment-fieldset'
+import { PlansFieldset } from '../data/plans-fieldset'
 import { DataFromSallesForm, dataFormSchema } from './data-form-schema'
 
 export const DataForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<DataFromSallesForm>({
+  const dataForm = useForm<DataFromSallesForm>({
     resolver: zodResolver(dataFormSchema),
     defaultValues: {
       input: {
         pedidoVenda: {
-          // desconto: 1,
           contatos: {
             create: [
               {
@@ -40,44 +36,15 @@ export const DataForm = () => {
               },
             ],
           },
-          // equipamentoPedido: {
-          //   equipamentoTipo: {
-          //     connect: {
-          //       id: '1',
-          //     },
-          //   },
-          //   quantidade: 10,
-          // },
-          formaPagamento: {
-            connect: {
-              id: '1',
-            },
-          },
-          // modeloContrato: {
-          //   connect: {
-          //     id: '1',
-          //   },
-          // },
-          valor: {
-            connect: {
-              id: '1',
-            },
-          },
-          lead: {
-            upsert: {
-              nome: 'Teste',
-              data_nascimento: '1999-01-01',
-              documento: '04721151110',
-              documento_tipo: 'CPF',
-              is_cliente: false,
-              observacao: 'teste',
-              publicidade: 'teste',
-            },
-          },
         },
       },
     },
   })
+
+  const {
+    handleSubmit,
+    formState: { errors },
+  } = dataForm
 
   async function onSubmitData(data: DataFromSallesForm) {
     console.log(`Formulário: ${JSON.stringify(data)}`)
@@ -95,15 +62,17 @@ export const DataForm = () => {
   }, [errors])
 
   return (
-    <form onSubmit={handleSubmit(onSubmitData)}>
-      <FieldsetHeader />
-      <BasicInfoFieldset register={register} errors={errors} />
-      <AddressFieldset register={register} errors={errors} />
-      <PlansAndPaymentFieldset register={register} errors={errors} />
-      <Separator />
-      <FinalValue />
-      <Separator />
-      <Actions />
-    </form>
+    <FormProvider {...dataForm}>
+      <form onSubmit={handleSubmit(onSubmitData)}>
+        <FieldsetHeader />
+        <BasicInfoFieldset />
+        <AddressFieldset />
+        <PlansFieldset />
+        <EquipmentFieldset />
+        <PaymentFieldset />
+        <Separator />
+        <Actions />
+      </form>
+    </FormProvider>
   )
 }

@@ -8,7 +8,7 @@ interface ErrorProps extends ComponentProps<'span'> {
 
 export const Error = ({ children, className }: ErrorProps) => {
   return (
-    <span
+    <div
       className={twMerge(
         'col-span-full flex items-center gap-1 text-xs text-red-500',
         className,
@@ -17,9 +17,9 @@ export const Error = ({ children, className }: ErrorProps) => {
       {children && (
         <>
           <ShieldAlert className="h-4 w-4" />
-          {children}
+          <span className="flex-1">{children}</span>
         </>
       )}
-    </span>
+    </div>
   )
 }

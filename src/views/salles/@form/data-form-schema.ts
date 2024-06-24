@@ -22,25 +22,39 @@ export const dataFormSchema = z.object({
       endereco: z.object({
         create: z
           .object({
-            bairro: z.string().optional(),
+            bairro: z
+              .string()
+              .optional()
+              .transform((value) => (value === '' ? undefined : value)),
             cep: z
               .string()
-              .min(1, { message: 'Por favor, digite um CEP valido.' }),
-            cidade: z.string().optional(),
+              .min(1, { message: 'Por favor, digite um CEP valido.' })
+              .transform((value) => (value === '' ? undefined : value)),
+            cidade: z
+              .string()
+              .optional()
+              .transform((value) => (value === '' ? undefined : value)),
             complemento: z
               .string()
               .optional()
-              .refine((complemento) => complemento !== ''),
-            estado: z.string().optional(),
+              .transform((value) => (value === '' ? undefined : value)),
+            estado: z
+              .string()
+              .optional()
+              .transform((value) => (value === '' ? undefined : value)),
             lat: z.number().optional(),
             lng: z.number().optional(),
             numero: z
               .string()
               .min(1, { message: 'Por favor, digite o número do endereço.' }),
-            rua: z.string().optional(),
+            rua: z
+              .string()
+              .optional()
+              .transform((value) => (value === '' ? undefined : value)),
             tipo: z
               .enum(['Casa', 'Trabalho', 'Agendamento', 'Outros'])
-              .optional(),
+              .optional()
+              .transform((value) => (value === undefined ? undefined : value)),
           })
           .optional(),
       }),
@@ -48,12 +62,19 @@ export const dataFormSchema = z.object({
       equipamentoPedido: z.object({
         equipamentoTipo: z.object({
           connect: z.object({
-            id: z.string().min(1, {
-              message: 'Por favor, insira o tipo de plano correto.',
-            }),
+            id: z
+              .string({
+                required_error: 'Por favor, selecione o tipo do aparelho',
+              })
+              .min(1, {
+                message: 'Por favor, insira o tipo de plano correto.',
+              }),
           }),
         }),
-        observacao: z.string().optional(),
+        observacao: z
+          .string()
+          .optional()
+          .transform((value) => (value === '' ? undefined : value)),
         quantidade: z
           .string()
           .min(1, {
@@ -65,21 +86,45 @@ export const dataFormSchema = z.object({
       formaPagamento: z.object({
         connect: z.object({
           id: z
-            .string()
+            .string({
+              invalid_type_error: 'Parece que o tipo inserido não é valido.',
+              required_error: 'Por favor, insira a forma de pagamento.',
+            })
             .min(1, { message: 'Por favor, insira a forma de pagamento.' }),
         }),
       }),
 
       lead: z.object({
         upsert: z.object({
-          data_nascimento: z.string().optional(),
-          documento: z.string().optional(),
-          documento_tipo: z.enum(['CPF', 'CNPJ']).optional(),
-          id: z.string().optional(),
-          is_cliente: z.boolean().optional(),
+          data_nascimento: z
+            .string()
+            .optional()
+            .transform((value) => (value === '' ? undefined : value)),
+          documento: z
+            .string()
+            .optional()
+            .transform((value) => (value === '' ? undefined : value)),
+          documento_tipo: z
+            .enum(['CPF', 'CNPJ'])
+            .optional()
+            .transform((value) => (value === undefined ? undefined : value)),
+          id: z
+            .string()
+            .optional()
+            .transform((value) => (value === '' ? undefined : value)),
+          is_cliente: z
+            .boolean()
+            .optional()
+            .transform((value) => (value === undefined ? undefined : value)),
           nome: z.string().min(1, { message: 'Por favor, insira o nome.' }),
-          observacao: z.string().optional(),
-          publicidade: z.string().optional(),
+          observacao: z
+            .string()
+            .optional()
+            .transform((value) => (value === '' ? undefined : value)),
+          publicidade: z
+            .string()
+            .optional()
+            .transform((value) => (value === '' ? undefined : value)),
         }),
       }),
 
@@ -91,7 +136,7 @@ export const dataFormSchema = z.object({
         }),
       }),
 
-      parcelas: z.number().optional(),
+      parcelas: z.string().optional().transform(Number),
 
       valor: z.object({
         connect: z.object({

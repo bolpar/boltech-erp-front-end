@@ -1,5 +1,5 @@
 import { Button } from '@/components/UI/button'
-import * as InputText from '@/components/UI/input-text'
+import * as InputText from '@/components/UI/input'
 import * as Select from '@/components/UI/select'
 import { TextArea } from '@/components/UI/textarea'
 import { LegendFieldset } from '@/components/legend-fieldset'
@@ -11,15 +11,15 @@ export const InstallationFieldset = () => {
       <LegendFieldset>INSTALAÇÃO</LegendFieldset>
 
       <InputText.Root label="Técnico">
-        <InputText.Input placeHolder="Digite aqui o técnico...">
+        <InputText.Text placeHolder="Digite aqui o técnico...">
           <InputText.SearchButton />
-        </InputText.Input>
+        </InputText.Text>
       </InputText.Root>
       <InputText.Root label="Valor de Instalação">
-        <InputText.Input placeHolder="Digite aqui o valor de instalação..." />
+        <InputText.Text placeHolder="Digite aqui o valor de instalação..." />
       </InputText.Root>
       <InputText.Root label="Valor de Deslocamento">
-        <InputText.Input placeHolder="Digite aqui o valor de deslocamento..." />
+        <InputText.Text placeHolder="Digite aqui o valor de deslocamento..." />
       </InputText.Root>
 
       <div className="col-span-full grid grid-cols-3 gap-4">
@@ -36,7 +36,7 @@ export const InstallationFieldset = () => {
         </Select.Root>
 
         <InputText.Root label="Data e Hora">
-          <InputText.Input placeHolder="Digite aqui a data e hora..." />
+          <InputText.Text placeHolder="Digite aqui a data e hora..." />
         </InputText.Root>
       </div>
 

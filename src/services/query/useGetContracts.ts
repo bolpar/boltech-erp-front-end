@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
-import { getClients } from './getClients'
+import { getContracts } from './getContracts'
 
-export function useGetClients() {
+export function useGetContracts() {
   const { data, error, isLoading } = useQuery({
-    queryKey: ['clientsFromClientesPage'],
-    queryFn: async () => await getClients(),
+    queryKey: ['contracts'],
+    queryFn: async () => await getContracts(),
   })
 
   return {

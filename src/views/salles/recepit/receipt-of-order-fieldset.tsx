@@ -1,4 +1,4 @@
-import * as InputText from '@/components/UI/input-text'
+import * as InputText from '@/components/UI/input'
 import { TextArea } from '@/components/UI/textarea'
 import { LegendFieldset } from '@/components/legend-fieldset'
 import { CardReceiptModalContent } from './card-receipt-modal-content'

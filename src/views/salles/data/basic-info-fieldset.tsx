@@ -1,64 +1,65 @@
-import * as InputText from '@/components/UI/input-text'
+import * as InputField from '@/components/UI/input'
 import { LegendFieldset } from '@/components/legend-fieldset'
-import { FieldErrors, UseFormRegister } from 'react-hook-form'
+import { useFormContext } from 'react-hook-form'
 import { DataFromSallesForm } from '../@form/data-form-schema'
 
-interface BasicInfoFieldsetProps {
-  register: UseFormRegister<DataFromSallesForm>
-  errors: FieldErrors<DataFromSallesForm>
-}
+export const BasicInfoFieldset = () => {
+  const {
+    formState: { errors },
+  } = useFormContext<DataFromSallesForm>()
+  const errorMessage = errors.input?.pedidoVenda
 
-export const BasicInfoFieldset = ({
-  register,
-  errors,
-}: BasicInfoFieldsetProps) => {
   return (
     <fieldset className="grid grid-cols-3 gap-4">
       <LegendFieldset>INFORMAÇÕES BÁSICAS</LegendFieldset>
 
-      <InputText.Root label="Nome">
-        <InputText.Input
+      <InputField.Root label="Nome">
+        <InputField.Text
+          fieldName="input.pedidoVenda.lead.upsert.nome"
           placeHolder="Digite aqui seu nome..."
-          register={register('input.pedidoVenda.lead.upsert.nome')}
         />
-        <InputText.Error>
-          {errors.input?.pedidoVenda?.lead?.upsert?.nome?.message as string}
-        </InputText.Error>
-      </InputText.Root>
+        <InputField.Error>
+          {errorMessage?.lead?.upsert?.nome?.message as string}
+        </InputField.Error>
+      </InputField.Root>
 
-      <InputText.Root label="CPF/CNPJ" optional>
-        <InputText.Input
+      <InputField.Root label="CPF/CNPJ" optional>
+        <InputField.Text
+          fieldName="input.pedidoVenda.lead.upsert.documento"
           placeHolder="Digite aqui seu CPF/CNPJ..."
-          register={register('input.pedidoVenda.lead.upsert.documento')}
         />
-      </InputText.Root>
-      <InputText.Root label="Data de Nascimento" optional>
-        <InputText.Input
+      </InputField.Root>
+
+      <InputField.Root label="Data de Nascimento" optional>
+        <InputField.Text
+          fieldName="input.pedidoVenda.lead.upsert.data_nascimento"
           placeHolder="Digite aqui a sua data de nascimento..."
-          register={register('input.pedidoVenda.lead.upsert.data_nascimento')}
         />
-      </InputText.Root>
-      <InputText.Root label="E-mail" optional>
-        <InputText.Input
+      </InputField.Root>
+
+      <InputField.Root label="E-mail" optional>
+        <InputField.Text
+          fieldName="input.pedidoVenda.contatos.create.0.valor"
           placeHolder="Digite aqui seu endereço de e-mail..."
-          register={register('input.pedidoVenda.contatos.create.0.valor')}
         />
-      </InputText.Root>
-      <InputText.Root label="Celular">
-        <InputText.Input
+      </InputField.Root>
+
+      <InputField.Root label="Celular" optional>
+        <InputField.Text
+          fieldName="input.pedidoVenda.contatos.create.1.valor"
           placeHolder="Digite aqui seu número de celular..."
-          register={register('input.pedidoVenda.contatos.create.1.valor')}
         />
-        <InputText.Error>
-          {errors?.input?.pedidoVenda?.contatos?.message as string}
-        </InputText.Error>
-      </InputText.Root>
-      <InputText.Root label="Telefone" optional>
-        <InputText.Input
+        <InputField.Error>
+          {errorMessage?.contatos?.message as string}
+        </InputField.Error>
+      </InputField.Root>
+
+      <InputField.Root label="Telefone" optional>
+        <InputField.Text
+          fieldName="input.pedidoVenda.contatos.create.2.valor"
           placeHolder="Digite aqui seu número de telefone..."
-          register={register('input.pedidoVenda.contatos.create.2.valor')}
         />
-      </InputText.Root>
+      </InputField.Root>
     </fieldset>
   )
 }

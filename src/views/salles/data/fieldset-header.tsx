@@ -1,7 +1,11 @@
 import * as Select from '@/components/UI/select'
 import * as Card from '@/components/card'
+import { Controller, useFormContext } from 'react-hook-form'
+import { DataFromSallesForm } from '../@form/data-form-schema'
 
 export const FieldsetHeader = () => {
+  const { control } = useFormContext<DataFromSallesForm>()
+
   return (
     <fieldset className="flex h-full items-start gap-4">
       <Card.Root>
@@ -13,19 +17,24 @@ export const FieldsetHeader = () => {
 
       <div className="mt-1 h-24 w-px bg-zinc-100 dark:bg-borderDarkMode" />
 
-      <Select.Root>
-        <Select.Trigger
-          label="Publicidade"
-          placeholder="Selecione a publicidade..."
-        />
+      <Controller
+        name="input.pedidoVenda.lead.upsert.publicidade"
+        control={control}
+        render={({ field: { onChange } }) => (
+          <Select.Root onValueChange={onChange}>
+            <Select.Trigger
+              label="Publicidade"
+              placeholder="Selecione a publicidade..."
+            />
 
-        <Select.Content>
-          <Select.Item value="instagram">Instagram</Select.Item>
-          <Select.Item value="facebook">Facebook</Select.Item>
-          <Select.Item value="twitter">Twitter</Select.Item>
-          <Select.Item value="whatsapp">WhatsApp</Select.Item>
-        </Select.Content>
-      </Select.Root>
+            <Select.Content>
+              <Select.Item value="instagram">Instagram</Select.Item>
+              <Select.Item value="facebook">Facebook</Select.Item>
+              <Select.Item value="whatsapp">WhatsApp</Select.Item>
+            </Select.Content>
+          </Select.Root>
+        )}
+      />
     </fieldset>
   )
 }

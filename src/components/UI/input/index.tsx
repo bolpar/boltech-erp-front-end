@@ -1,9 +1,8 @@
 import { Error } from './error'
-import { Input } from './input'
 import { ModalButton } from './modal-button'
+import { Number } from './number'
 import { Root } from './root'
 import { SearchButton } from './search-button'
+import { Text } from './text'
 
-export { Error, Input, ModalButton, Root, SearchButton }
-// eslint-disable-next-line prettier/prettier
-
+export { Error, ModalButton, Number, Root, SearchButton, Text }

@@ -14,7 +14,7 @@ export const Root = ({ label, children, className }: RootProps) => {
     <Dialog.Root>
       <div
         className={twMerge(
-          'mb-10 flex w-fit flex-col items-center justify-center gap-4 rounded border px-8 py-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-600',
+          'flex w-fit flex-col items-center justify-center gap-4 rounded border px-8 py-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-600',
           className,
         )}
       >

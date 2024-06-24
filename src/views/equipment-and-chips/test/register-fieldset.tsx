@@ -1,5 +1,5 @@
 import { Button } from '@/components/UI/button'
-import * as InputText from '@/components/UI/input-text'
+import * as InputText from '@/components/UI/input'
 import { Separator } from '@/components/separator'
 import {
   LockKeyholeIcon,

@@ -2,12 +2,18 @@ import { Separator } from '@/components/separator'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 import { CheckIcon } from 'lucide-react'
 
-export const PlanOne = () => {
+interface PlanOneProps {
+  value: string
+  id: string
+}
+
+export const PlanOne = ({ value, id }: PlanOneProps) => {
   return (
     <div className="flex flex-col items-center rounded border p-2 dark:border-darkModeContrast dark:bg-darkModeContrast">
       <label className="mb-2 flex w-full items-center gap-2 rounded border p-2 dark:border-borderDarkMode">
         <RadioGroup.Item
-          value="recorrencia"
+          value={value}
+          id={id}
           className="flex h-6 w-6 cursor-default items-center justify-center rounded-full border bg-white outline-none dark:border-darkMode dark:bg-darkMode"
         >
           <RadioGroup.Indicator>
