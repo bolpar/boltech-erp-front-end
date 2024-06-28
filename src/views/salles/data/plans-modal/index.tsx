@@ -5,7 +5,6 @@ import * as SelectionModal from '@/components/UI/selection-modal'
 import { Spinner } from '@/components/UI/spinner'
 import { useGetContracts } from '@/services/useGetContracts'
 import { useGetCookie } from '@/services/useGetCookie'
-import { getValueCookie } from '@/utils/getValueCookie'
 import { setCookie } from '@/utils/setCookie'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 import { CheckCircleIcon, ShieldAlertIcon } from 'lucide-react'
@@ -34,10 +33,10 @@ export const PlansModal = ({ className }: PlansModalProps) => {
     refetch()
   }
 
-  async function handleGetChoosenPlan() {
-    const optionSaved = await getValueCookie('currentOption')
-    setCurrentOption(optionSaved)
-  }
+  // async function handleGetChoosenPlan() {
+  //   const optionSaved = await getValueCookie('currentOption')
+  //   setCurrentOption(optionSaved)
+  // }
 
   // handleGetChoosenPlan()
 

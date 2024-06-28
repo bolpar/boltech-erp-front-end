@@ -1,7 +1,7 @@
-import * as InputField from '@/components/UI/input';
-import { LegendFieldset } from '@/components/legend-fieldset';
-import { useFormContext } from 'react-hook-form';
-import { DataFromSallesForm } from './@form/data-form-schema';
+import * as InputField from '@/components/UI/input'
+import { LegendFieldset } from '@/components/legend-fieldset'
+import { useFormContext } from 'react-hook-form'
+import { DataFromSallesForm } from './@form/data-form-schema'
 
 export const BasicInfoFieldset = () => {
   const {
