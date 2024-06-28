@@ -18,7 +18,10 @@ interface PlansModalProps extends ComponentProps<'div'> {}
 
 export const PlansModal = ({ className }: PlansModalProps) => {
   const { data: contracts, isLoading } = useGetContracts()
-  const { control, formState: { errors } } = useFormContext<DataFromSallesForm>()
+  const {
+    control,
+    formState: { errors },
+  } = useFormContext<DataFromSallesForm>()
   const [currentOption, setCurrentOption] = useState('')
   const { refetch } = useGetCookie({
     cookieName: 'currentOption',
@@ -92,19 +95,23 @@ export const PlansModal = ({ className }: PlansModalProps) => {
           </SelectionModal.Close>
         )}
       </SelectionModal.Content>
-      
-      <div className='flex flex-col gap-1'>
+
+      <div className="flex flex-col gap-1">
         {errorMessage?.modeloContrato?.connect?.id?.message && (
-          <div className='flex items-center gap-1'>
-            <ShieldAlertIcon className='text-red-500 h-4 w-4' />
-            <span className='text-xs text-red-500'>{errorMessage?.modeloContrato?.connect?.id?.message}</span>
+          <div className="flex items-center gap-1">
+            <ShieldAlertIcon className="h-4 w-4 text-red-500" />
+            <span className="text-xs text-red-500">
+              {errorMessage?.modeloContrato?.connect?.id?.message}
+            </span>
           </div>
         )}
 
         {errorMessage?.valor?.connect?.id?.message && (
-          <div className='flex items-center gap-1'>
-            <ShieldAlertIcon className='text-red-500 h-4 w-4' />
-            <span className='text-xs text-red-500'>{errorMessage?.valor?.connect?.id?.message}</span>
+          <div className="flex items-center gap-1">
+            <ShieldAlertIcon className="h-4 w-4 text-red-500" />
+            <span className="text-xs text-red-500">
+              {errorMessage?.valor?.connect?.id?.message}
+            </span>
           </div>
         )}
       </div>

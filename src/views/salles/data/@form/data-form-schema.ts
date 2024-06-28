@@ -116,14 +116,14 @@ export const dataFormSchema = z.object({
             .transform((value) => (value === '' ? undefined : value)),
           documento: z
             .string()
-            .min(11)
-            .max(14)
+            // .min(11)
+            // .max(14)
             .optional()
             .transform((value) => (value === '' ? undefined : value)),
           documento_tipo: z
             .enum(['CPF', 'CNPJ'])
-            .optional()
-            .transform((value) => (value === undefined ? 'CPF' : value)),
+            .optional(),
+            // .transform((value, ctx) => (value === undefined ? 'CPF' : value)),
           id: z
             .string()
             .optional()
@@ -147,7 +147,9 @@ export const dataFormSchema = z.object({
       modeloContrato: z.object({
         connect: z.object({
           id: z
-            .string({ required_error: 'Por favor, selecione o modelo de contrato.'})
+            .string({
+              required_error: 'Por favor, selecione o modelo de contrato.',
+            })
             .min(1, { message: 'Por favor, selecione o modelo de contrato.' }),
         }),
       }),
@@ -156,11 +158,19 @@ export const dataFormSchema = z.object({
 
       valor: z.object({
         connect: z.object({
-          id: z.string({ required_error: 'Por favor, digite um valor.'}).min(1, { message: 'Por favor, digite um valor.' }),
+          id: z
+            .string({ required_error: 'Por favor, digite um valor.' })
+            .min(1, { message: 'Por favor, digite um valor.' }),
         }),
       }),
     }),
   }),
+}).superRefine((data, ctx) => {
+  if (data.input.pedidoVenda.lead.upsert.documento === "" || !data.input.pedidoVenda.lead.upsert.documento) {
+    data.input.pedidoVenda.lead.upsert.documento_tipo = undefined
+  } else {
+    data.input.pedidoVenda.lead.upsert.documento_tipo = 'CPF'
+  }
 })
 
 export type DataFromSallesForm = z.infer<typeof dataFormSchema>

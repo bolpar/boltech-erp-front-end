@@ -1,10 +1,10 @@
 'use client'
 
-import { initializeTheme } from '@/utils/initializeTheme';
-import * as Switch from '@radix-ui/react-switch';
-import { MoonStarIcon, SunIcon } from 'lucide-react';
-import { useTheme } from 'next-themes';
-import { useCallback, useEffect, useState } from 'react';
+import { initializeTheme } from '@/utils/initializeTheme'
+import * as Switch from '@radix-ui/react-switch'
+import { MoonStarIcon, SunIcon } from 'lucide-react'
+import { useTheme } from 'next-themes'
+import { useCallback, useEffect, useState } from 'react'
 
 interface SwitchThemeProps {
   cookieTheme: string
@@ -18,12 +18,11 @@ export const SwitchTheme = ({ cookieTheme }: SwitchThemeProps) => {
 
   const handleInitializeTheme = useCallback(() => {
     initializeTheme({ cookieTheme, setTheme, setNextTheme })
-  }, [cookieTheme, setTheme, setNextTheme]) 
+  }, [cookieTheme, setTheme, setNextTheme])
 
   useEffect(() => {
     handleInitializeTheme()
   }, [handleInitializeTheme])
-
 
   async function changeTheme() {
     const newTheme = theme === 'light' ? 'dark' : 'light'

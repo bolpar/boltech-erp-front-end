@@ -1,7 +1,7 @@
-import * as InputField from '@/components/UI/input'
-import { LegendFieldset } from '@/components/legend-fieldset'
-import { useFormContext } from 'react-hook-form'
-import { DataFromSallesForm } from './@form/data-form-schema'
+import * as InputField from '@/components/UI/input';
+import { LegendFieldset } from '@/components/legend-fieldset';
+import { useFormContext } from 'react-hook-form';
+import { DataFromSallesForm } from './@form/data-form-schema';
 
 export const BasicInfoFieldset = () => {
   const {
@@ -30,6 +30,9 @@ export const BasicInfoFieldset = () => {
           fieldName="input.pedidoVenda.lead.upsert.documento"
           placeHolder="Digite aqui seu CPF/CNPJ..."
         />
+        <InputField.Error>
+          {errorMessage?.lead?.upsert?.documento?.message as string}
+        </InputField.Error>
       </InputField.Root>
 
       <InputField.Root label="Data de Nascimento" optional>
@@ -37,6 +40,9 @@ export const BasicInfoFieldset = () => {
           fieldName="input.pedidoVenda.lead.upsert.data_nascimento"
           placeHolder="Digite aqui a sua data de nascimento..."
         />
+        <InputField.Error>
+          {errorMessage?.lead?.upsert?.data_nascimento?.message as string}
+        </InputField.Error>
       </InputField.Root>
 
       <InputField.Root label="E-mail">

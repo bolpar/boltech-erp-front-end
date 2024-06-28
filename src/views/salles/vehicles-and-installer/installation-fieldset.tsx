@@ -4,22 +4,28 @@ import * as Select from '@/components/UI/select'
 import { TextArea } from '@/components/UI/textarea'
 import { LegendFieldset } from '@/components/legend-fieldset'
 import { CheckIcon } from 'lucide-react'
+import { useFormContext } from 'react-hook-form'
+import { VehiclesAndInstallerFormData } from './@form/vehicles-and-installer-schema'
 
 export const InstallationFieldset = () => {
+  const { formState: { errors } } = useFormContext<VehiclesAndInstallerFormData>()
+
   return (
     <fieldset className="grid grid-cols-3 gap-4">
       <LegendFieldset>INSTALAÇÃO</LegendFieldset>
 
       <InputText.Root label="Técnico">
-        <InputText.Text placeHolder="Digite aqui o técnico...">
+        <InputText.Text<VehiclesAndInstallerFormData> fieldName="input.veiculo.veiculoAgendamento.tecnico.connect.id" placeHolder="Digite aqui o técnico...">
           <InputText.SearchButton />
         </InputText.Text>
       </InputText.Root>
-      <InputText.Root label="Valor de Instalação">
-        <InputText.Text placeHolder="Digite aqui o valor de instalação..." />
+
+      <InputText.Root label="Valor de Instalação" >
+        <InputText.Text<VehiclesAndInstallerFormData> fieldName="input.veiculo.veiculoAgendamento.create.valor" placeHolder="Digite aqui o valor de instalação..." />
       </InputText.Root>
-      <InputText.Root label="Valor de Deslocamento">
-        <InputText.Text placeHolder="Digite aqui o valor de deslocamento..." />
+      
+      <InputText.Root label="Valor de Deslocamento" optional>
+        <InputText.Text<VehiclesAndInstallerFormData> fieldName="input.veiculo.veiculoAgendamento.create.valor_deslocamento" placeHolder="Digite aqui o valor de deslocamento..." />
       </InputText.Root>
 
       <div className="col-span-full grid grid-cols-3 gap-4">
@@ -36,11 +42,11 @@ export const InstallationFieldset = () => {
         </Select.Root>
 
         <InputText.Root label="Data e Hora">
-          <InputText.Text placeHolder="Digite aqui a data e hora..." />
+          <InputText.Text<VehiclesAndInstallerFormData> fieldName="input.veiculo.veiculoAgendamento.create.instalacao" placeHolder="Digite aqui a data e hora..." />
         </InputText.Root>
       </div>
 
-      <TextArea label="Observações" />
+      <TextArea<VehiclesAndInstallerFormData> label="Observações" fieldName='input.veiculo.veiculoAgendamento.create.observacao' />
 
       <div className="col-span-full mt-8">
         <Button variant="success" icon={CheckIcon}>
