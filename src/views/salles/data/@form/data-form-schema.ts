@@ -3,21 +3,35 @@ import { z } from 'zod'
 export const dataFormSchema = z.object({
   input: z.object({
     pedidoVenda: z.object({
-      acrescimo: z.string().optional().transform(Number),
+      acrescimo: z
+        .string()
+        .optional()
+        .transform(Number)
+        .transform((value) => (value === 0 ? undefined : value)),
 
-      contatos: z.object({
-        create: z.array(
-          z.object({
-            padrao: z.boolean().optional(),
-            tipo: z.enum(['Email', 'Telefone', 'Celular']),
-            valor: z
-              .string()
-              .min(1, { message: 'Por favor, digite um valor.' }),
-          }),
-        ),
-      }),
+      contatos: z.object(
+        {
+          create: z.array(
+            z.object({
+              padrao: z.boolean().optional(),
+              tipo: z.enum(['Email', 'Telefone', 'Celular']),
+              valor: z
+                .string({
+                  required_error: 'Por favor, digite um valor.',
+                  invalid_type_error: 'Tipo errado.',
+                })
+                .min(1, { message: 'Por favor, digite um valor.' }),
+            }),
+          ),
+        },
+        { message: 'Por favor, digita um valor. ' },
+      ),
 
-      desconto: z.string().optional().transform(Number),
+      desconto: z
+        .string()
+        .optional()
+        .transform(Number)
+        .transform((value) => (value === 0 ? undefined : value)),
 
       endereco: z.object({
         create: z
@@ -102,12 +116,14 @@ export const dataFormSchema = z.object({
             .transform((value) => (value === '' ? undefined : value)),
           documento: z
             .string()
+            .min(11)
+            .max(14)
             .optional()
             .transform((value) => (value === '' ? undefined : value)),
           documento_tipo: z
             .enum(['CPF', 'CNPJ'])
             .optional()
-            .transform((value) => (value === undefined ? undefined : value)),
+            .transform((value) => (value === undefined ? 'CPF' : value)),
           id: z
             .string()
             .optional()
@@ -131,7 +147,7 @@ export const dataFormSchema = z.object({
       modeloContrato: z.object({
         connect: z.object({
           id: z
-            .string()
+            .string({ required_error: 'Por favor, selecione o modelo de contrato.'})
             .min(1, { message: 'Por favor, selecione o modelo de contrato.' }),
         }),
       }),
@@ -140,7 +156,7 @@ export const dataFormSchema = z.object({
 
       valor: z.object({
         connect: z.object({
-          id: z.string().min(1, { message: 'Por favor, digite um valor.' }),
+          id: z.string({ required_error: 'Por favor, digite um valor.'}).min(1, { message: 'Por favor, digite um valor.' }),
         }),
       }),
     }),

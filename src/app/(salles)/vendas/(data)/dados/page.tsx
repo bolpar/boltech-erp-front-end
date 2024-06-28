@@ -1,4 +1,4 @@
-import { DataForm } from '@/views/salles/@form/data-form'
+import { DataForm } from '@/views/salles/data/@form/data-form'
 
 export default async function Data() {
   return <DataForm />

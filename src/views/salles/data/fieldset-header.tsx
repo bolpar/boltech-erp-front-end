@@ -1,7 +1,7 @@
 import * as Select from '@/components/UI/select'
 import * as Card from '@/components/card'
 import { Controller, useFormContext } from 'react-hook-form'
-import { DataFromSallesForm } from '../@form/data-form-schema'
+import { DataFromSallesForm } from './@form/data-form-schema'
 
 export const FieldsetHeader = () => {
   const { control } = useFormContext<DataFromSallesForm>()

@@ -1,23 +1,22 @@
 'use client'
 
 import { Path } from '@/utils/pathType'
-import { DataFromSallesForm } from '@/views/salles/@form/data-form-schema'
 import { ComponentProps } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { twMerge } from 'tailwind-merge'
 
-interface TextAreaProps extends ComponentProps<'label'> {
-  fieldName?: Path<DataFromSallesForm>
+interface TextAreaProps<FormFieldInput> extends ComponentProps<'label'> {
+  fieldName?: Path<FormFieldInput>
   label: string
   optional?: boolean
 }
 
-export const TextArea = ({
+export function TextArea<FormFieldInput>({
   label,
   optional,
   fieldName,
   className,
-}: TextAreaProps) => {
+}: TextAreaProps<FormFieldInput>) {
   const { register } = useFormContext()
 
   return (

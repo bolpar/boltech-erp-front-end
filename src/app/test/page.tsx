@@ -1,4 +1,4 @@
-import { getContracts } from '@/services/query/getContracts'
+import { getContracts } from '@/graphql/query/getContracts'
 
 export default async function Test() {
   const data = await getContracts()

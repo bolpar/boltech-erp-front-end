@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getClients } from './getClients'
+import { getClients } from '../graphql/query/getClients'
 
 export function useGetClients() {
   const { data, error, isLoading } = useQuery({

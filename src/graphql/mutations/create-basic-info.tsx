@@ -1,4 +1,4 @@
-import { DataFromSallesForm } from '@/views/salles/@form/data-form-schema'
+import { DataFromSallesForm } from '@/views/salles/data/@form/data-form-schema'
 import { gql, GraphQLClient } from 'graphql-request'
 
 // type DocumentType = 'CPF' | 'CNPJ'

@@ -1,7 +1,7 @@
 import * as InputField from '@/components/UI/input'
 import { LegendFieldset } from '@/components/legend-fieldset'
 import { useFormContext } from 'react-hook-form'
-import { DataFromSallesForm } from '../@form/data-form-schema'
+import { DataFromSallesForm } from './@form/data-form-schema'
 
 export const AddressFieldset = () => {
   const {
@@ -15,7 +15,7 @@ export const AddressFieldset = () => {
 
       <div className="col-span-3 grid grid-cols-3 gap-4">
         <InputField.Root label="CEP">
-          <InputField.Text
+          <InputField.Text<DataFromSallesForm>
             fieldName="input.pedidoVenda.endereco.create.cep"
             min={8}
             max={8}
@@ -31,7 +31,7 @@ export const AddressFieldset = () => {
 
         <div className="col-span-3 grid grid-cols-3 gap-4">
           <InputField.Root label="Endereço" optional>
-            <InputField.Text
+            <InputField.Text<DataFromSallesForm>
               fieldName="input.pedidoVenda.endereco.create.rua"
               max={255}
               placeHolder="Digite aqui seu endereço..."
@@ -39,7 +39,7 @@ export const AddressFieldset = () => {
           </InputField.Root>
 
           <InputField.Root label="Número">
-            <InputField.Text
+            <InputField.Text<DataFromSallesForm>
               fieldName="input.pedidoVenda.endereco.create.numero"
               max={20}
               placeHolder="Digite aqui seu número..."
@@ -50,7 +50,7 @@ export const AddressFieldset = () => {
           </InputField.Root>
 
           <InputField.Root label="Complemento" optional>
-            <InputField.Text
+            <InputField.Text<DataFromSallesForm>
               fieldName="input.pedidoVenda.endereco.create.complemento"
               max={255}
               placeHolder="Digite aqui seu complemento..."
@@ -61,7 +61,7 @@ export const AddressFieldset = () => {
 
       <div className="col-span-3 grid grid-cols-3 gap-4">
         <InputField.Root label="Bairro" optional>
-          <InputField.Text
+          <InputField.Text<DataFromSallesForm>
             fieldName="input.pedidoVenda.endereco.create.bairro"
             max={30}
             placeHolder="Digite aqui seu bairro..."
@@ -69,7 +69,7 @@ export const AddressFieldset = () => {
         </InputField.Root>
 
         <InputField.Root label="Cidade" optional>
-          <InputField.Text
+          <InputField.Text<DataFromSallesForm>
             fieldName="input.pedidoVenda.endereco.create.cidade"
             max={30}
             placeHolder="Digite aqui sua cidade..."
@@ -77,7 +77,7 @@ export const AddressFieldset = () => {
         </InputField.Root>
 
         <InputField.Root label="UF" optional>
-          <InputField.Text
+          <InputField.Text<DataFromSallesForm>
             fieldName="input.pedidoVenda.endereco.create.estado"
             min={2}
             max={2}

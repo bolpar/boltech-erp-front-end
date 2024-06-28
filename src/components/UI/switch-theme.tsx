@@ -1,10 +1,10 @@
 'use client'
 
-import { initializeTheme } from '@/utils/initializeTheme'
-import * as Switch from '@radix-ui/react-switch'
-import { MoonStarIcon, SunIcon } from 'lucide-react'
-import { useTheme } from 'next-themes'
-import { useState } from 'react'
+import { initializeTheme } from '@/utils/initializeTheme';
+import * as Switch from '@radix-ui/react-switch';
+import { MoonStarIcon, SunIcon } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { useCallback, useEffect, useState } from 'react';
 
 interface SwitchThemeProps {
   cookieTheme: string
@@ -16,22 +16,23 @@ export const SwitchTheme = ({ cookieTheme }: SwitchThemeProps) => {
   })
   const { theme: nextTheme, setTheme: setNextTheme } = useTheme()
 
-  initializeTheme({ cookieTheme, setTheme, setNextTheme })
+  const handleInitializeTheme = useCallback(() => {
+    initializeTheme({ cookieTheme, setTheme, setNextTheme })
+  }, [cookieTheme, setTheme, setNextTheme]) 
+
+  useEffect(() => {
+    handleInitializeTheme()
+  }, [handleInitializeTheme])
+
 
   async function changeTheme() {
-    if (theme === 'light') {
-      setTheme('dark')
-      setNextTheme('dark')
-    }
-
-    if (theme === 'dark') {
-      setTheme('light')
-      setNextTheme('light')
-    }
+    const newTheme = theme === 'light' ? 'dark' : 'light'
+    setTheme(newTheme)
+    setNextTheme(newTheme)
 
     await fetch('/api/cookies/theme/', {
       method: 'POST',
-      body: JSON.stringify({ theme }),
+      body: JSON.stringify({ theme: newTheme }),
     })
   }
 

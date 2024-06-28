@@ -1,6 +1,6 @@
 'use client'
 
-import { DataFromSallesForm } from '@/views/salles/@form/data-form-schema'
+import { DataFromSallesForm } from '@/views/salles/data/@form/data-form-schema'
 import { useQuery } from '@tanstack/react-query'
 import { createBasicInfo } from './create-basic-info'
 

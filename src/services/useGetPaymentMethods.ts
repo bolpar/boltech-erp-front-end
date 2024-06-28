@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getPaymentMethods } from './getPaymentMethods'
+import { getPaymentMethods } from '../graphql/query/getPaymentMethods'
 
 interface UseGetPaymentMethodsRequest {
   id: string

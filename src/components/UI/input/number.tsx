@@ -1,22 +1,21 @@
 import { Path } from '@/utils/pathType'
-import { DataFromSallesForm } from '@/views/salles/@form/data-form-schema'
 import { ComponentProps, ReactNode } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { twMerge } from 'tailwind-merge'
 
-interface InputProps extends ComponentProps<'input'> {
-  fieldName?: Path<DataFromSallesForm>
+interface InputProps<FormFieldInput> extends ComponentProps<'input'> {
+  fieldName?: Path<FormFieldInput>
   children?: ReactNode
   placeHolder: string
 }
 
-export const Number = ({
+export function Number<FormFieldInput>({
   fieldName,
   placeHolder,
   children,
   className,
   ...rest
-}: InputProps) => {
+}: InputProps<FormFieldInput>) {
   const { register } = useFormContext()
 
   return (

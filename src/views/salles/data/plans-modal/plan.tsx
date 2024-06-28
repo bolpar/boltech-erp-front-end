@@ -3,11 +3,12 @@ import { formatPrice } from '@/utils/formatPrice'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 import { CheckIcon } from 'lucide-react'
 import { Controller, useFormContext } from 'react-hook-form'
-import { DataFromSallesForm } from '../../@form/data-form-schema'
+import { DataFromSallesForm } from '../@form/data-form-schema'
 
 interface PlanProps extends RadioGroup.RadioGroupItemProps {
   value: string
   id: string
+  currentOption: string
   contract: {
     id: string
     descricao: string
@@ -28,8 +29,15 @@ interface PlanProps extends RadioGroup.RadioGroupItemProps {
   }
 }
 
-export const Plan = ({ value, id, contract, ...rest }: PlanProps) => {
+export const Plan = ({
+  value,
+  id,
+  currentOption,
+  contract,
+  ...rest
+}: PlanProps) => {
   const { control } = useFormContext<DataFromSallesForm>()
+  const isCurrentOption = id === currentOption
 
   return (
     <div className="flex flex-col items-center rounded border p-2 dark:border-darkModeContrast dark:bg-darkModeContrast">
@@ -52,35 +60,26 @@ export const Plan = ({ value, id, contract, ...rest }: PlanProps) => {
 
       <div className="mb-4 flex w-72 flex-col items-center rounded bg-gradient-to-tr from-green-100 to-green-300 p-4 text-center text-sm dark:bg-gradient-to-tr dark:from-green-300 dark:to-green-500 dark:text-black">
         <label className="flex w-full items-center justify-between">
-          Valor Mensal:{' '}
+          <span>Valor Mensal:</span>
           <span className="font-bold">
             {formatPrice(contract.valor_mensal)}
           </span>
         </label>
+
         <label className="flex w-full items-center justify-between">
-          Valor Ativação:{' '}
+          <span>Valor Ativação:</span>
           <span className="font-bold">
             {formatPrice(contract.valor_ativacao)}
           </span>
         </label>
-        {/*
-         <label className="items-cente flex w-full justify-between">
-          Formas de Pagamento:
-            <span className="font-bold">
-              {contract.valores.length > 0
-                ? contract.valores.map((valor) => valor.nome)
-                : '-'}
-            </span>
-          </label>
-        */}
       </div>
 
       <div className="w-full">
         <Controller
           name="input.pedidoVenda.valor.connect.id"
           control={control}
-          render={({ field: { onChange, value } }) => (
-            <Select.Root onValueChange={onChange}>
+          render={({ field: { onChange } }) => (
+            <Select.Root onValueChange={onChange} disabled={!isCurrentOption}>
               <Select.Trigger
                 label="Valores Disponíveis"
                 placeholder="Selecione o valor"

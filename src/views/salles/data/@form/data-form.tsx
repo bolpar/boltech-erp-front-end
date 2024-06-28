@@ -2,16 +2,16 @@
 
 import { Actions } from '@/components/actions'
 import { Separator } from '@/components/separator'
-import { createBasicInfo } from '@/services/mutations/create-basic-info'
+import { createBasicInfo } from '@/graphql/mutations/create-basic-info'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useEffect } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
-import { AddressFieldset } from '../data/address-fieldset'
-import { BasicInfoFieldset } from '../data/basic-info-fieldset'
-import { EquipmentFieldset } from '../data/equipment-fieldset'
-import { FieldsetHeader } from '../data/fieldset-header'
-import { PaymentFieldset } from '../data/payment-fieldset'
-import { PlansFieldset } from '../data/plans-fieldset'
+import { AddressFieldset } from '../address-fieldset'
+import { BasicInfoFieldset } from '../basic-info-fieldset'
+import { EquipmentFieldset } from '../equipment-fieldset'
+import { FieldsetHeader } from '../fieldset-header'
+import { FinalValue } from '../final-value'
+import { PaymentFieldset } from '../payment-fieldset'
+import { PlansFieldset } from '../plans-fieldset'
 import { DataFromSallesForm, dataFormSchema } from './data-form-schema'
 
 export const DataForm = () => {
@@ -41,10 +41,7 @@ export const DataForm = () => {
     },
   })
 
-  const {
-    handleSubmit,
-    formState: { errors },
-  } = dataForm
+  const { handleSubmit } = dataForm
 
   async function onSubmitData(data: DataFromSallesForm) {
     console.log(`Formulário: ${JSON.stringify(data)}`)
@@ -57,10 +54,6 @@ export const DataForm = () => {
     }
   }
 
-  useEffect(() => {
-    console.log(errors)
-  }, [errors])
-
   return (
     <FormProvider {...dataForm}>
       <form onSubmit={handleSubmit(onSubmitData)}>
@@ -70,6 +63,11 @@ export const DataForm = () => {
         <PlansFieldset />
         <EquipmentFieldset />
         <PaymentFieldset />
+        <Separator />
+        <div className="flex items-center justify-center gap-8">
+          <FinalValue label="Valor Unitário" value={422} />
+          <FinalValue label="Valor Final" value={1688} />
+        </div>
         <Separator />
         <Actions />
       </form>

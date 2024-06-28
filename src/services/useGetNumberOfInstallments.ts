@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getNumberOfInstallments } from './getNumberOfInstallments'
+import { getNumberOfInstallments } from '../graphql/query/getNumberOfInstallments'
 
 interface UseGetNumberOfInstallmentsRequest {
   id: string

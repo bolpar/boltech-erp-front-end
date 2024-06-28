@@ -3,9 +3,9 @@ import * as Select from '@/components/UI/select'
 import { Spinner } from '@/components/UI/spinner'
 import { TextArea } from '@/components/UI/textarea'
 import { LegendFieldset } from '@/components/legend-fieldset'
-import { useGetEquipamentTypes } from '@/services/query/useGetEquipamentTypes'
+import { useGetEquipamentTypes } from '@/services/useGetEquipamentTypes'
 import { Controller, useFormContext } from 'react-hook-form'
-import { DataFromSallesForm } from '../@form/data-form-schema'
+import { DataFromSallesForm } from './@form/data-form-schema'
 
 export const EquipmentFieldset = () => {
   const {
@@ -29,7 +29,6 @@ export const EquipmentFieldset = () => {
                 <Select.Trigger
                   label="Tipo do Aparelho"
                   placeholder="Selecione seu tipo de aparelho..."
-                  className=""
                 />
                 <Select.Content>
                   {isLoading && <Spinner />}
@@ -54,7 +53,7 @@ export const EquipmentFieldset = () => {
         </div>
 
         <InputField.Root label="Quantidade">
-          <InputField.Number
+          <InputField.Number<DataFromSallesForm>
             fieldName="input.pedidoVenda.equipamentoPedido.quantidade"
             min={1}
             placeHolder="Digite a quantidade..."
@@ -65,7 +64,7 @@ export const EquipmentFieldset = () => {
         </InputField.Root>
       </div>
 
-      <TextArea
+      <TextArea<DataFromSallesForm>
         fieldName="input.pedidoVenda.equipamentoPedido.observacao"
         label="Observações Adicionais"
         optional

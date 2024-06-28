@@ -2,11 +2,10 @@ import * as InputField from '@/components/UI/input/index'
 import * as Select from '@/components/UI/select'
 import { Spinner } from '@/components/UI/spinner'
 import { LegendFieldset } from '@/components/legend-fieldset'
-import { useGetNumberOfInstallments } from '@/services/query/useGetNumberOfInstallments'
-import { useGetPaymentMethods } from '@/services/query/useGetPaymentMethods'
+import { useGetNumberOfInstallments } from '@/services/useGetNumberOfInstallments'
+import { useGetPaymentMethods } from '@/services/useGetPaymentMethods'
 import { Controller, useFormContext } from 'react-hook-form'
-import { DataFromSallesForm } from '../@form/data-form-schema'
-import { FinalValue } from './final-value'
+import { DataFromSallesForm } from './@form/data-form-schema'
 
 export const PaymentFieldset = () => {
   const {
@@ -31,36 +30,36 @@ export const PaymentFieldset = () => {
       <fieldset className="mb-4 grid grid-cols-3 gap-4">
         <LegendFieldset>PAGAMENTO</LegendFieldset>
 
-        <div className="col-span-full grid grid-cols-3 gap-4">
-          <Controller
-            name="input.pedidoVenda.formaPagamento.connect.id"
-            control={control}
-            render={({ field: { onChange } }) => (
-              <Select.Root onValueChange={onChange} disabled={!valueId}>
-                <Select.Trigger
-                  label="Forma de Pagamento"
-                  placeholder="Selecione a forma de pagamento..."
-                />
-                <Select.Content>
-                  {isLoading && <Spinner />}
-                  {!isLoading &&
-                    paymentMethods?.formasPagamentos.map(
-                      (paymentMethod, index) => {
-                        return (
-                          <Select.Item key={index} value={paymentMethod.id}>
-                            {paymentMethod.tipo}
-                          </Select.Item>
-                        )
-                      },
-                    )}
-                </Select.Content>
-                <Select.Error>
-                  {errorMessage?.formaPagamento?.connect?.id?.message as string}
-                </Select.Error>
-              </Select.Root>
-            )}
-          />
-        </div>
+        {/* <div className="col-span-full grid grid-cols-3 gap-4"> */}
+        <Controller
+          name="input.pedidoVenda.formaPagamento.connect.id"
+          control={control}
+          render={({ field: { onChange } }) => (
+            <Select.Root onValueChange={onChange} disabled={!valueId}>
+              <Select.Trigger
+                label="Forma de Pagamento"
+                placeholder="Selecione a forma de pagamento..."
+              />
+              <Select.Content>
+                {isLoading && <Spinner />}
+                {!isLoading &&
+                  paymentMethods?.formasPagamentos.map(
+                    (paymentMethod, index) => {
+                      return (
+                        <Select.Item key={index} value={paymentMethod.id}>
+                          {paymentMethod.tipo}
+                        </Select.Item>
+                      )
+                    },
+                  )}
+              </Select.Content>
+              <Select.Error>
+                {errorMessage?.formaPagamento?.connect?.id?.message as string}
+              </Select.Error>
+            </Select.Root>
+          )}
+        />
+        {/* </div> */}
 
         <Controller
           name="input.pedidoVenda.parcelas"
@@ -70,7 +69,7 @@ export const PaymentFieldset = () => {
               <Select.Trigger
                 label="Número de Parcelas"
                 placeholder="Selecione o número de parcelas..."
-                className="h-fit py-[0.605rem]"
+                className="h-fit"
               />
               <Select.Content>
                 {isLoadingTotalNumberOfInstallments && <Spinner />}
@@ -115,7 +114,9 @@ export const PaymentFieldset = () => {
         </InputField.Root>
       </fieldset>
 
-      <FinalValue />
+      {/* <div className="col-span-full m-auto mt-10 flex items-center justify-center">
+        <FinalValue />
+      </div> */}
     </>
   )
 }

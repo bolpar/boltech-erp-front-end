@@ -8,7 +8,7 @@ interface ContentProps extends Dialog.DialogContentProps {
   children: ReactNode
 }
 
-export const Content = ({ children, className }: ContentProps) => {
+export const Content = ({ children, className, ...rest }: ContentProps) => {
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="fixed inset-0 z-40 bg-black/50" />
@@ -17,6 +17,7 @@ export const Content = ({ children, className }: ContentProps) => {
           'fixed left-[50%] top-[50%] z-50 max-h-[85vh] w-fit max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white p-[25px] focus:outline-none',
           className,
         )}
+        {...rest}
       >
         {children}
       </Dialog.Content>

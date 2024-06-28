@@ -1,5 +1,5 @@
 import * as Table from '@/components/table/index'
-import { getClients } from '@/services/query/getClients'
+import { getClients } from '@/graphql/query/getClients'
 import { formatDate } from '@/utils/formatDate'
 import { ComponentProps } from 'react'
 

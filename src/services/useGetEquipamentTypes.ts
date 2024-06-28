@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getEquipamentTypes } from './getEquipamentTypes'
+import { getEquipamentTypes } from '../graphql/query/getEquipamentTypes'
 
 export function useGetEquipamentTypes() {
   const { data, isLoading, error } = useQuery({
