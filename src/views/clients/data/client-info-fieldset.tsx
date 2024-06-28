@@ -7,28 +7,28 @@ export const ClientInfoFieldset = () => {
       <LegendFieldset>INFORMAÇÕES DO CLIENTE</LegendFieldset>
 
       <InputText.Root label="Nome">
-        <InputText.Input
+        <InputText.Text
           disabled
           value="Gabriel Pedroso"
           placeHolder="Digite seu nome..."
         />
       </InputText.Root>
       <InputText.Root label="Fantasia">
-        <InputText.Input
+        <InputText.Text
           disabled
           value="Pedroso"
           placeHolder="Digite seu nome fantasia..."
         />
       </InputText.Root>
       <InputText.Root label="CPF/CPNJ">
-        <InputText.Input
+        <InputText.Text
           disabled
           value="099.099099-99"
           placeHolder="Digite seu CPF/CNPJ..."
         />
       </InputText.Root>
       <InputText.Root label="Data de Nascimento">
-        <InputText.Input
+        <InputText.Text
           disabled
           value="11/11/24"
           placeHolder="Digite sua data de nascimento..."

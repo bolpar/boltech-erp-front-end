@@ -6,7 +6,7 @@ export const FieldsetHeader = () => {
     <fieldset className="grid grid-cols-3 gap-4">
       <div className="col-span-3 grid grid-cols-3 gap-4">
         <InputText.Root label="IMEI">
-          <InputText.Input placeHolder="Digite aqui o seu IMEI..." />
+          <InputText.Text placeHolder="Digite aqui o seu IMEI..." />
         </InputText.Root>
         <Select.Root>
           <Select.Trigger
@@ -20,7 +20,7 @@ export const FieldsetHeader = () => {
           </Select.Content>
         </Select.Root>
         <InputText.Root label="Protocolo">
-          <InputText.Input placeHolder="Digite aqui o protocolo..." />
+          <InputText.Text placeHolder="Digite aqui o protocolo..." />
         </InputText.Root>
       </div>
     </fieldset>

@@ -27,7 +27,7 @@ export const PixModalContent = () => {
 
         <div className="grid grid-cols-2 gap-4">
           <InputText.Root label="Valor">
-            <InputText.Input placeHolder="Digite o valor..." />
+            <InputText.Text placeHolder="Digite o valor..." />
           </InputText.Root>
           <Select.Root>
             <Select.Trigger

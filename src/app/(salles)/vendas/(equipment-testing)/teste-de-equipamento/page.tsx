@@ -11,10 +11,10 @@ export default function EquipmentTesting() {
       <div className="grid grid-cols-4 grid-rows-6 gap-4">
         <div className="col-span-2 row-span-5 grid grid-cols-2 gap-4">
           {/* <InputText.Root label="IMEI">
-            <InputText.Input register={register={''}} placeHolder="Digite o seu IMEI..." />
+            <InputText.Text register={register={''}} placeHolder="Digite o seu IMEI..." />
           </InputText.Root> */}
           {/* <InputText.Root label="Placa">
-            <InputText.Input placeHolder="Digite a placa do veículo..." />
+            <InputText.Text placeHolder="Digite a placa do veículo..." />
           </InputText.Root> */}
           <Select.Root>
             <Select.Trigger

@@ -8,23 +8,23 @@ export const ChipRegisterFieldset = () => {
   return (
     <fieldset className="grid grid-cols-3 gap-4">
       <InputText.Root label="Situação">
-        <InputText.Input placeHolder="Digite aqui a situação..." />
+        <InputText.Text placeHolder="Digite aqui a situação..." />
       </InputText.Root>
       <InputText.Root label="Plano">
-        <InputText.Input placeHolder="Digite aqui o plano..." />
+        <InputText.Text placeHolder="Digite aqui o plano..." />
       </InputText.Root>
       <InputText.Root label="Status">
-        <InputText.Input placeHolder="Digite aqui o status..." />
+        <InputText.Text placeHolder="Digite aqui o status..." />
       </InputText.Root>
 
       <InputText.Root label="Valor">
-        <InputText.Input placeHolder="Digite aqui o valor..." />
+        <InputText.Text placeHolder="Digite aqui o valor..." />
       </InputText.Root>
       <InputText.Root label="Número do Chip">
-        <InputText.Input placeHolder="Digite aqui o número do chip..." />
+        <InputText.Text placeHolder="Digite aqui o número do chip..." />
       </InputText.Root>
       <InputText.Root label="Fornecedor">
-        <InputText.Input placeHolder="Digite aqui o fornecedor..." />
+        <InputText.Text placeHolder="Digite aqui o fornecedor..." />
       </InputText.Root>
 
       <Select.Root>
@@ -39,7 +39,7 @@ export const ChipRegisterFieldset = () => {
         </Select.Content>
       </Select.Root>
       <InputText.Root label="Data da Compra">
-        <InputText.Input placeHolder="Digite aqui a data da compra..." />
+        <InputText.Text placeHolder="Digite aqui a data da compra..." />
       </InputText.Root>
 
       <Select.Root>

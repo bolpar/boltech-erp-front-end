@@ -5,7 +5,7 @@ export const SearchClient = () => {
   return (
     <form className="grid h-full grid-cols-4">
       <InputText.Root className="col-span-2">
-        {/* <InputText.Input placeHolder="Digite o nome do cliente..." /> */}
+        {/* <InputText.Text placeHolder="Digite o nome do cliente..." /> */}
         <InputText.SearchButton className="h-full" />
       </InputText.Root>
 

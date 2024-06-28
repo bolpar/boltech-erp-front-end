@@ -4,7 +4,7 @@ export const RegisterImagesForm = () => {
   return (
     <form>
       <InputText.Root>
-        <InputText.Input placeHolder="Digite o bloqueio" />
+        <InputText.Text placeHolder="Digite o bloqueio" />
       </InputText.Root>
     </form>
   )

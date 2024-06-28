@@ -12,13 +12,13 @@ export const RegisterFieldset = () => {
     <div className="grid grid-cols-4 grid-rows-6 gap-4">
       <form className="col-span-2 row-span-6 grid grid-cols-2 gap-4">
         <InputText.Root label="Nome" className="col-span-full">
-          <InputText.Input placeHolder="Digite seu nome..." />
+          <InputText.Text placeHolder="Digite seu nome..." />
         </InputText.Root>
         <InputText.Root label="IMEI">
-          <InputText.Input placeHolder="Digite seu IMEI..." />
+          <InputText.Text placeHolder="Digite seu IMEI..." />
         </InputText.Root>
         <InputText.Root label="Placa">
-          <InputText.Input placeHolder="Digite o código da placa..." />
+          <InputText.Text placeHolder="Digite o código da placa..." />
         </InputText.Root>
 
         <div className="col-span-full flex items-center gap-2">

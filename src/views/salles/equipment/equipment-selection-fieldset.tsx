@@ -14,7 +14,7 @@ export const EquipmentSelectionFieldset = () => {
 
       <div className="col-span-2 row-span-3 grid grid-cols-2 gap-4">
         <InputText.Root label="Tipo do Aparelho" className="row-span-1">
-          <InputText.Input
+          <InputText.Text
             placeHolder="Digite o tipo do aparelho..."
             value="Aparelho Boltech"
             disabled
@@ -22,7 +22,7 @@ export const EquipmentSelectionFieldset = () => {
           />
         </InputText.Root>
         <InputText.Root label="Quantidade" className="row-span-1">
-          <InputText.Input
+          <InputText.Text
             placeHolder="Digite a quantidade..."
             value="1/3"
             disabled
@@ -42,7 +42,7 @@ export const EquipmentSelectionFieldset = () => {
           </Select.Root>
 
           <InputText.Root label="Telefone">
-            <InputText.Input placeHolder="Digite o número de telefone..." />
+            <InputText.Text placeHolder="Digite o número de telefone..." />
           </InputText.Root>
 
           <Select.Root>

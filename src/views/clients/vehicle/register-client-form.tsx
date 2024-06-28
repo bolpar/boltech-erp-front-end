@@ -13,22 +13,22 @@ export const RegisterClientForm = () => {
     <form className="grid grid-cols-4 gap-4">
       <div className="col-span-2 grid grid-cols-2 gap-4">
         <InputText.Root label="Placa">
-          <InputText.Input placeHolder="Digite o placa..." />
+          <InputText.Text placeHolder="Digite o placa..." />
         </InputText.Root>
         <InputText.Root label="Modelo">
-          <InputText.Input placeHolder="Digite o modelo..." />
+          <InputText.Text placeHolder="Digite o modelo..." />
         </InputText.Root>
         <InputText.Root label="Ano">
-          <InputText.Input placeHolder="Digite o ano..." />
+          <InputText.Text placeHolder="Digite o ano..." />
         </InputText.Root>
         <InputText.Root label="Marca">
-          <InputText.Input placeHolder="Digite o a marca..." />
+          <InputText.Text placeHolder="Digite o a marca..." />
         </InputText.Root>
         <InputText.Root label="Apelido" className="col-span-full">
-          <InputText.Input placeHolder="Digite o apelido..." />
+          <InputText.Text placeHolder="Digite o apelido..." />
         </InputText.Root>
         <InputText.Root label="Tipo do Veículo" className="col-span-full">
-          <InputText.Input placeHolder="Digite o tipo do veículo..." />
+          <InputText.Text placeHolder="Digite o tipo do veículo..." />
         </InputText.Root>
       </div>
 

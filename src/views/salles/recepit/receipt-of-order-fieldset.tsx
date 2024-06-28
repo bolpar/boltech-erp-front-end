@@ -14,7 +14,7 @@ export const ReceiptOfOrderFieldset = () => {
         <div className="col-span-2 grid grid-rows-6 gap-4">
           <div className="row-span-2 grid grid-cols-2 gap-4">
             <InputText.Root label="Nome do Cliente">
-              <InputText.Input
+              <InputText.Text
                 placeHolder="Digite o nome do cliente..."
                 value="Gabriel Pedroso"
                 disabled
@@ -22,7 +22,7 @@ export const ReceiptOfOrderFieldset = () => {
               />
             </InputText.Root>
             <InputText.Root label="E-mail">
-              <InputText.Input
+              <InputText.Text
                 placeHolder="Digite o endereço de e-mail..."
                 value="gabriellucaspd@gmail.com"
                 disabled
@@ -30,7 +30,7 @@ export const ReceiptOfOrderFieldset = () => {
               />
             </InputText.Root>
             <InputText.Root label="Telefone">
-              <InputText.Input
+              <InputText.Text
                 placeHolder="Digite o número de telefone..."
                 value="41 9 8403-0800"
                 disabled
@@ -38,7 +38,7 @@ export const ReceiptOfOrderFieldset = () => {
               />
             </InputText.Root>
             <InputText.Root label="Plano Escolhido">
-              <InputText.Input
+              <InputText.Text
                 placeHolder="Digite o plano escolhido..."
                 value="Plano Recorrente"
                 disabled
@@ -55,10 +55,10 @@ export const ReceiptOfOrderFieldset = () => {
 
         <div className="col-span-1 grid grid-rows-6 gap-4">
           <InputText.Root label="Dinheiro">
-            <InputText.Input placeHolder="Digite o valor..." />
+            <InputText.Text placeHolder="Digite o valor..." />
           </InputText.Root>
           <InputText.Root label="PIX">
-            <InputText.Input
+            <InputText.Text
               placeHolder="Digite o valor..."
               value={1200}
               readOnly
@@ -67,10 +67,10 @@ export const ReceiptOfOrderFieldset = () => {
               <InputText.ModalButton>
                 <PixModalContent />
               </InputText.ModalButton>
-            </InputText.Input>
+            </InputText.Text>
           </InputText.Root>
           <InputText.Root label="Cartão">
-            <InputText.Input
+            <InputText.Text
               placeHolder="Digite o valor..."
               value={1200}
               readOnly
@@ -79,10 +79,10 @@ export const ReceiptOfOrderFieldset = () => {
               <InputText.ModalButton>
                 <CardReceiptModalContent />
               </InputText.ModalButton>
-            </InputText.Input>
+            </InputText.Text>
           </InputText.Root>
           <InputText.Root label="Boleto">
-            <InputText.Input
+            <InputText.Text
               placeHolder="Digite o valor..."
               value={1200}
               readOnly
@@ -91,10 +91,10 @@ export const ReceiptOfOrderFieldset = () => {
               <InputText.ModalButton>
                 <ReleaseOfTicketsModalContent />
               </InputText.ModalButton>
-            </InputText.Input>
+            </InputText.Text>
           </InputText.Root>
           <InputText.Root label="Crédito">
-            <InputText.Input
+            <InputText.Text
               placeHolder="Digite o valor..."
               value={1200}
               readOnly
@@ -104,10 +104,10 @@ export const ReceiptOfOrderFieldset = () => {
                 {/* <PixModalContent /> */}
                 <div />
               </InputText.ModalButton>
-            </InputText.Input>
+            </InputText.Text>
           </InputText.Root>
           <InputText.Root label="Desconto">
-            <InputText.Input placeHolder="Digite o valor..." />
+            <InputText.Text placeHolder="Digite o valor..." />
           </InputText.Root>
         </div>
       </div>

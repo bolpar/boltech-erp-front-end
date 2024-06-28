@@ -8,10 +8,10 @@ export const EquipmentRegisterFieldset = () => {
   return (
     <fieldset className="grid grid-cols-3 gap-4">
       <InputText.Root label="IMEI">
-        <InputText.Input placeHolder="Digite aqui o seu IMEI..." />
+        <InputText.Text placeHolder="Digite aqui o seu IMEI..." />
       </InputText.Root>
       <InputText.Root label="Data da Compra">
-        <InputText.Input placeHolder="Digite aqui a data da compra..." />
+        <InputText.Text placeHolder="Digite aqui a data da compra..." />
       </InputText.Root>
       <Select.Root>
         <Select.Trigger
@@ -26,10 +26,10 @@ export const EquipmentRegisterFieldset = () => {
       </Select.Root>
 
       <InputText.Root label="Situação">
-        <InputText.Input placeHolder="Digite aqui a situação..." />
+        <InputText.Text placeHolder="Digite aqui a situação..." />
       </InputText.Root>
       <InputText.Root label="Data da Venda">
-        <InputText.Input placeHolder="Digite aqui a data da venda..." />
+        <InputText.Text placeHolder="Digite aqui a data da venda..." />
       </InputText.Root>
       <Select.Root>
         <Select.Trigger
@@ -44,17 +44,17 @@ export const EquipmentRegisterFieldset = () => {
       </Select.Root>
 
       <InputText.Root label="Protocolo">
-        <InputText.Input placeHolder="Digite aqui o protocolo..." />
+        <InputText.Text placeHolder="Digite aqui o protocolo..." />
       </InputText.Root>
       <InputText.Root label="IP do Servidor">
-        <InputText.Input placeHolder="Digite aqui o IP do servidor..." />
+        <InputText.Text placeHolder="Digite aqui o IP do servidor..." />
       </InputText.Root>
       <InputText.Root label="Porta do Servidor">
-        <InputText.Input placeHolder="Digite aqui a porta do servidor..." />
+        <InputText.Text placeHolder="Digite aqui a porta do servidor..." />
       </InputText.Root>
 
       <InputText.Root label="Modelo">
-        <InputText.Input placeHolder="Digite aqui o modelo..." />
+        <InputText.Text placeHolder="Digite aqui o modelo..." />
       </InputText.Root>
       <Select.Root>
         <Select.Trigger
