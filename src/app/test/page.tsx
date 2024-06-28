@@ -1,7 +1,0 @@
-import { getContracts } from '@/graphql/query/getContracts'
-
-export default async function Test() {
-  const data = await getContracts()
-
-  return <pre>{JSON.stringify(data)}</pre>
-}
