@@ -7,14 +7,16 @@ import { EquipmentSelectionFieldset } from '../equipment-selection-fieldset'
 import { MobileDeviceRecordsFieldset } from '../mobile-device-records-fieldset'
 
 export const EquipmentForm = () => {
-  const equipmentForm = useForm()
+  const equipmentForm = useForm<object>()
   const { handleSubmit } = equipmentForm
 
-  function onSubmitEquipmentForm() {}
+  function onSubmitEquipmentForm(data: object) {
+    console.log(data)
+  }
 
   return (
     <FormProvider {...equipmentForm}>
-      <form>
+      <form onSubmit={handleSubmit(onSubmitEquipmentForm)}>
         <EquipmentSelectionFieldset />
         <MobileDeviceRecordsFieldset />
         <Separator />

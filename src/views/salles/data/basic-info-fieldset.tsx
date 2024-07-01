@@ -6,7 +6,6 @@ import { DataFromSallesForm } from './@form/data-form-schema'
 export const BasicInfoFieldset = () => {
   const {
     formState: { errors },
-    register,
   } = useFormContext<DataFromSallesForm>()
   const errorMessage = errors.input?.pedidoVenda
 
