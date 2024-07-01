@@ -1,15 +1,5 @@
-import { Actions } from '@/components/actions'
-import { Separator } from '@/components/separator'
-import { EquipmentSelectionFieldset } from '@/views/salles/equipment/equipment-selection-fieldset'
-import { MobileDeviceRecordsFieldset } from '@/views/salles/equipment/mobile-device-records-fieldset'
+import { EquipmentForm } from '@/views/salles/equipment/@form/equipment-form'
 
 export default function Equipment() {
-  return (
-    <form>
-      <EquipmentSelectionFieldset />
-      <MobileDeviceRecordsFieldset />
-      <Separator />
-      <Actions />
-    </form>
-  )
+  return <EquipmentForm />
 }

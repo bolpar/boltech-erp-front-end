@@ -10,23 +10,21 @@ export const dataFormSchema = z
           .transform(Number)
           .transform((value) => (value === 0 ? undefined : value)),
 
-        contatos: z.object(
-          {
-            create: z.array(
-              z.object({
-                padrao: z.boolean().optional(),
-                tipo: z.enum(['Email', 'Telefone', 'Celular']),
-                valor: z
-                  .string({
-                    required_error: 'Por favor, digite um valor.',
-                    invalid_type_error: 'Tipo errado.',
-                  })
-                  .min(1, { message: 'Por favor, digite um valor.' }),
-              }),
-            ),
-          },
-          { message: 'Por favor, digita um valor. ' },
-        ),
+        contatos: z.object({
+          create: z.array(
+            z.object({
+              padrao: z.boolean().optional(),
+              tipo: z.enum(['Email', 'Telefone', 'Celular']),
+              valor: z
+                .string({
+                  required_error: 'Por favor, preencha o valor de contato.',
+                })
+                .min(1, {
+                  message: 'Por favor, preencha o valor do tipo de contato',
+                }),
+            }),
+          ),
+        }),
 
         desconto: z
           .string()
@@ -81,7 +79,7 @@ export const dataFormSchema = z
             connect: z.object({
               id: z
                 .string({
-                  required_error: 'Por favor, selecione o tipo do aparelho',
+                  required_error: 'Por favor, selecione o tipo do aparelho.',
                 })
                 .min(1, {
                   message: 'Por favor, insira o tipo de plano correto.',
@@ -95,7 +93,7 @@ export const dataFormSchema = z
           quantidade: z
             .string()
             .min(1, {
-              message: 'Por favor, digite a quantidade',
+              message: 'Por favor, digite a quantidade.',
             })
             .transform(Number),
         }),
@@ -119,12 +117,9 @@ export const dataFormSchema = z
               .transform((value) => (value === '' ? undefined : value)),
             documento: z
               .string()
-              // .min(11)
-              // .max(14)
               .optional()
               .transform((value) => (value === '' ? undefined : value)),
             documento_tipo: z.enum(['CPF', 'CNPJ']).optional(),
-            // .transform((value, ctx) => (value === undefined ? 'CPF' : value)),
             id: z
               .string()
               .optional()

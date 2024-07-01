@@ -4,6 +4,7 @@ import { Actions } from '@/components/actions'
 import { Separator } from '@/components/separator'
 import { createBasicInfo } from '@/graphql/mutations/create-basic-info'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useEffect } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { AddressFieldset } from '../address-fieldset'
 import { BasicInfoFieldset } from '../basic-info-fieldset'
@@ -41,7 +42,10 @@ export const DataForm = () => {
     },
   })
 
-  const { handleSubmit } = dataForm
+  const {
+    handleSubmit,
+    formState: { errors },
+  } = dataForm
 
   async function onSubmitData(data: DataFromSallesForm) {
     console.log(`Formulário: ${JSON.stringify(data)}`)
@@ -54,6 +58,10 @@ export const DataForm = () => {
     }
   }
 
+  useEffect(() => {
+    console.log(errors)
+  }, [errors])
+
   return (
     <FormProvider {...dataForm}>
       <form onSubmit={handleSubmit(onSubmitData)}>
@@ -64,7 +72,7 @@ export const DataForm = () => {
         <EquipmentFieldset />
         <PaymentFieldset />
         <Separator />
-        <div className="flex items-center justify-center gap-8">
+        <div className="flex items-center justify-between gap-8 rounded-lg bg-neutral-100 p-2 dark:bg-opacity-10">
           <FinalValue label="Valor Unitário" value={422} />
           <FinalValue label="Valor Final" value={1688} />
         </div>
